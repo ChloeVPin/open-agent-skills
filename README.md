@@ -38,7 +38,7 @@ A skill is not more credible because it sounds confident. Where the best availab
 
 ## Release status
 
-`v0.1.0-draft` is the first public baseline: 35 standalone skills organized by task path. Every skill remains marked `Lifecycle: draft`, so this release does not claim universal correctness or production validation. Inspect each skill’s scope, sources, and evidence grade, then verify its advice against the repository and task where you use it.
+`v0.2.0-draft` is the evidence-reviewed baseline: 35 standalone skills organized by task path, every one with a graded, traceable provenance section (claim → finding → evidence grade → source) backed by [`docs/research.md`](docs/research.md). All skills remain `Lifecycle: draft` — promotion requires representative real-task evidence per the evidence standard, which none has yet. This release does not claim universal correctness or production validation. Inspect each skill’s scope, sources, and evidence grade, then verify its advice against the repository and task where you use it.
 
 Install the baseline with:
 
