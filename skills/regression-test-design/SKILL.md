@@ -50,16 +50,16 @@ Bad: Mock the parser’s return value and assert that the mock was called; the r
 If the contract is unclear, use `requirements-to-acceptance` before writing the test. If the test is flaky, isolate uncontrolled time, randomness, ordering, external services, or shared state before adding retries. If the test cannot reproduce the defect, preserve the limitation and improve observability rather than claiming regression coverage. If a test depends on unstable implementation details, move the assertion to the nearest stable interface.
 
 ## Validation evidence and provenance
+Claims in this skill map to graded findings in [`docs/research.md`](../../docs/research.md):
 
-- The governing research requires automated validation, empirical failure analysis, adversarial testing, boundary cases, and honest accounting of limitations.
-- [Google Research: Long-Term Effects of Mutation Testing](https://research.google/pubs/long-term-effects-of-mutation-testing/): mutation testing provides evidence about whether tests detect seeded behavioral changes, while its interpretation remains bounded by the selected mutations.
-- Mutation testing is used here as a diagnostic question—“what plausible wrong behavior would this test miss?”—not as a universal correctness score.
-- Label test results as observations, suspected uncovered faults as hypotheses, and new assertions as recommendations until the relevant behavior is demonstrated.
-- Confidence: high for behavior-first and boundary-oriented test design; medium for the right test level and tooling in any particular repository.
-- Freshness: review when the project’s test framework, architecture, risk profile, or evaluation strategy changes.
+- Mutants are coupled with real faults (Q1, Strong): 15-million-mutant longitudinal analysis (Petrović et al., ICSE 2021) found mutation testing flags live mutants that would have prevented real bugs.
+- Mutation-augmented test writing raises coverage and detection (Q2, Moderate): one controlled experiment with stated limits (22 students, 8 groups) — reported honestly as Moderate.
 
-For material conclusions, seek disconfirming evidence, distinguish observations from hypotheses and recommendations, record tradeoffs and uncertainty, and note confidence, freshness, and source independence.
+Source boundary: the sources support mutation-informed test design, not this skill's specific boundary-selection steps.
 
+Confidence: high for the fault-coupling evidence; medium for the boundary-selection heuristics. Freshness: review when mutation-testing research or the research base changes.
+
+Disconfirmation: large-scale evidence that mutation-score improvements do not track field-defect reduction would demote Q1's role in the procedure.
 ## Related skills and conflicts
 
 Related: `test-effectiveness-analysis`, `requirements-to-acceptance`, `evidence-driven-debugging`, `repository-change-verification`, `secure-coding-review`, and `differential-patch-review`. This skill does not authorize deleting failing tests, inflating coverage metrics, or treating green tests as proof of every behavior.

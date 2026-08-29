@@ -52,17 +52,17 @@ Bad: Choose the source with the larger audience or average incompatible claims w
 If evidence is incomparable, split the claims by context instead of choosing a winner. If evidence is insufficient, keep the contradiction open and lower confidence. If a failure has no reproducible mechanism, record the uncertainty and prioritize instrumentation or reproduction before changing foundational guidance.
 
 ## Validation evidence and provenance
+Claims in this skill map to graded findings in [`docs/research.md`](../../docs/research.md):
 
-Separate observations from hypotheses and recommendations; record confidence and freshness for each material conclusion. Check whether apparently independent sources share an origin.
+- Evidence-hierarchy and source-independence reasoning (S8, Principled): no direct study of contradiction-resolution procedures exists; graded honestly.
+- Preserving facts, roles, and explicit follow-ups while conflicting reports are reconciled (C2, Moderate): convergent incident-management practice.
+- Uncertainty management framing (NIST AI RMF; NIST AI 600-1 via S5): authoritative risk enumeration, not evaluated controls.
 
-- Governing research report: contradiction hunting, adversarial review, preserved rejected hypotheses, failure recovery, and provenance notes improve agent reliability.
-- [NIST AI RMF GenAI Profile](https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf): monitoring, incident/error tracking, after-action assessment, and continual improvement guidance.
-- Label observed conflicts separately from explanatory hypotheses and recommended resolutions; preserve uncertainty when the evidence does not decide between them.
+Source boundary: the sources are design input, not proof that this procedure resolves conflicts better than alternatives.
 
-Confidence: medium. Freshness review: after material failures, contradictory evidence, or methodology changes.
+Confidence: medium. Freshness: re-review when the source hierarchy in `docs/evidence-standard.md` or the research base changes.
 
-For material conclusions, seek disconfirming evidence, distinguish observations from hypotheses and recommendations, record tradeoffs and uncertainty, and note confidence, freshness, and source independence.
-
+Disconfirmation: a study showing intuition-first triage outperforms evidence-hierarchy resolution in comparable settings would weaken the procedure's ordering.
 ## Related skills and conflicts
 
 Related: `differential-patch-review`, `knowledge-maintenance`, `repository-change-verification`, and `epistemic-coding`. This skill does not authorize silently weakening governing principles to resolve local disagreement.

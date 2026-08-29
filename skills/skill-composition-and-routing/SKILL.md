@@ -49,15 +49,16 @@ Bad: Keep debugging application code after the evidence shows the vulnerable beh
 If no skill clearly applies, use the task’s repository guidance and record the gap rather than forcing a poor match. If two skills claim the same phase, compare scope and evidence, then narrow or revise one. If selected skills conflict materially, stop and ask or record the unresolved boundary; never silently apply both. If routing repeatedly causes unnecessary context or steps, simplify the composition and retain the reason.
 
 ## Validation evidence and provenance
+Claims in this skill map to graded findings in [`docs/research.md`](../../docs/research.md):
 
-- The governing research recommends composable skills, explicit dependency relationships, dynamic taxonomies, conflict resolution, and depth over volume.
-- [Agent Skills specification](https://agentskills.io/specification): a skill is a directory centered on a `SKILL.md` with required metadata describing what it does and when to use it; portability depends on respecting the format’s boundaries.
-- Routing is treated as a hypothesis about task fit; the agent should revise it when failures, overlap, or contradictory outcomes provide disconfirming evidence.
-- Confidence: medium-high for phase-based routing; medium for any specific ordering when repository constraints or risk requirements differ.
-- Freshness: review when skill triggers, dependencies, conflicts, or the library’s taxonomy materially change.
+- Metadata-first loading and on-demand depth (F8): the Agent Skills specification prescribes progressive disclosure; Strong as a format fact, Inferential as an effectiveness claim.
+- Fewer, more relevant instructions over more instructions (F3, Moderate): repository-level context evaluation found quality and relevance matter more than raw length.
 
-For material conclusions, seek disconfirming evidence, distinguish observations from hypotheses and recommendations, record tradeoffs and uncertainty, and note confidence, freshness, and source independence.
+Source boundary: routing behavior across host agents is not standardized or studied; boundaries defined here are design decisions.
 
+Confidence: high for format conformance; medium for routing boundaries until exercised across neighboring tasks. Freshness: review when the spec or the skill set changes.
+
+Disconfirmation: observed agents activating the wrong skill despite precise triggers, or composed skills producing conflicting instructions in practice, would force re-partitioning.
 ## Related skills and conflicts
 
 Related: every task skill in this library, especially `requirements-to-acceptance`, `epistemic-coding`, `repository-change-verification`, `contradiction-resolution`, and `knowledge-maintenance`. This skill does not override a selected skill’s safety boundary or authorize skipping a required phase to reduce context.

@@ -49,15 +49,17 @@ Bad: Mark a skill trusted because it has citations and confident wording without
 If the skill’s target or evidence is ambiguous, defer publication and ask for the missing decision or research. If it overlaps another skill, merge, narrow, or define a clear routing boundary instead of leaving competing instructions. If a source is unavailable or stale, lower confidence and lifecycle status. If a skill causes repeated misuse or no longer reflects evidence, preserve the rationale, revise or deprecate it, and identify dependents that need review.
 
 ## Validation evidence and provenance
+Claims in this skill map to graded findings in [`docs/research.md`](../../docs/research.md) and rules in [`docs/evidence-standard.md`](../../docs/evidence-standard.md):
 
-- The governing research requires depth over volume, explicit skill anatomy, adversarial review, source hierarchy and independence, lifecycle management, contradiction handling, and progress measured by usefulness.
-- [Agent Skills specification](https://agentskills.io/specification): `SKILL.md` metadata must identify the skill and when it should be used; format compliance is necessary for interoperability but does not establish procedural quality.
-- Review observations, hypotheses, and recommendations separately. Treat a review decision as a recommendation supported by evidence, not as proof that the skill cannot fail in use.
-- Confidence: high for the review criteria; medium for predicting generalization until the skill is exercised on representative agent tasks.
-- Freshness: review when the skill library, source evidence, agent behavior, risk model, or intended task population changes.
+- SKILL.md format and progressive-disclosure requirements (F8): the Agent Skills specification is authoritative as format; its effectiveness claim is Inferential.
+- Evidence grading, source hierarchy, and claim-to-source-to-grade mapping: repository standard (Principled) — established because anonymous attribution and grade-less claims were systemic audit findings.
+- Keeping skills focused and rejecting file-count growth (F3, Moderate): context quality matters more than volume.
 
-For material conclusions, seek disconfirming evidence, distinguish observations from hypotheses and recommendations, record tradeoffs and uncertainty, and note confidence, freshness, and source independence.
+Source boundary: the review criteria are a governance choice, not a validated rubric; a skill passing review can still fail in real tasks.
 
+Confidence: high for mechanical checks (frontmatter, links, section presence); medium for evidence-quality and overlap judgments. Freshness: review when the spec, evidence standard, or research base changes.
+
+Disconfirmation: skills that repeatedly pass this review yet fail on representative tasks would require revising the criteria themselves.
 ## Related skills and conflicts
 
 Related: `skill-composition-and-routing`, `epistemic-coding`, `requirements-to-acceptance`, `knowledge-maintenance`, `contradiction-resolution`, and every skill being reviewed. This skill does not authorize rejecting a skill solely because it is unfamiliar, promoting a skill without evidence, or overriding user and repository instructions.

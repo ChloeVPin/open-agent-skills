@@ -53,16 +53,16 @@ Bad: Mirror the entire interface or reverse strings without checking semantic or
 If supported locales or terminology are unknown, narrow the claim and ask the product or language owner. If a library lacks required locale data, do not silently approximate output whose cultural or legal meaning may change; document the limitation or choose a supported fallback. If parsing is ambiguous, reject or request clarification rather than guessing. If a translation changes meaning, pause release of the affected content and obtain qualified review.
 
 ## Validation evidence and provenance
+Claims in this skill map to graded findings in [`docs/research.md`](../../docs/research.md):
 
-- The governing research emphasizes adaptable taxonomies, explicit uncertainty, temporal maintenance, primary evidence, and distinguishing facts from conventions.
-- [Unicode UTS #35 / LDML](https://www.unicode.org/reports/tr35/): normative locale data and algorithms covering identifiers, numbers, dates, collation, calendars, keyboards, and message formatting through CLDR.
-- [Unicode CLDR](https://cldr.unicode.org/): maintained locale data used by major software systems and updated through an open review process.
-- Label observed formatting or translation behavior separately from language hypotheses and localization recommendations; repeated examples from one locale are not independent evidence for another.
-- Confidence: high for canonical-data and locale-data principles; medium for language-specific wording, cultural fit, and coverage until qualified review and representative users are involved.
-- Freshness: review when Unicode/CLDR data, supported locales, formatting libraries, terminology, translation resources, or user populations change.
+- Locale data model and cultural data (Q9, Strong standard fact): Unicode TR35 defines the model; CLDR supplies survey-backed data.
+- Hand-rolled locale rules as a common failure source (Q9, Inferential): plausible from the standardization facts but not independently measured.
 
-For material conclusions, seek disconfirming evidence, distinguish observations from hypotheses and recommendations, record tradeoffs and uncertainty, and note confidence, freshness, and source independence.
+Source boundary: the standards govern correctness of formatting and collation; translation quality and cultural fit require human or native-speaker verification.
 
+Confidence: high for the data authority; medium for localization completeness in any specific locale. Freshness: review when Unicode/CLDR versions or platform locale support change.
+
+Disconfirmation: evidence that platform locale APIs diverge from CLDR in consequential ways would require per-platform overrides in the procedure.
 ## Related skills and conflicts
 
 Related: `accessibility-review`, `api-contract-compatibility`, `privacy-and-data-handling`, `requirements-to-acceptance`, `regression-test-design`, `observability-and-instrumentation`, and `knowledge-maintenance`. This skill does not authorize hard-coded locale assumptions, exposing personal data for localization, or claiming translation quality from automated output alone.

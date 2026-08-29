@@ -51,18 +51,17 @@ Bad: Count invalid or equivalent mutants as evidence that the suite is weak, or 
 If mutation tooling cannot run, record the exact blocker and use manually designed fault injections only as limited evidence. If a mutation is equivalent, document why rather than weakening the test. If mutation score improves while behavior coverage worsens, reject the metric as misleading and inspect the test assertions.
 
 ## Validation evidence and provenance
+Claims in this skill map to graded findings in [`docs/research.md`](../../docs/research.md):
 
-Record confidence and freshness for coverage and risk conclusions, distinguish observed test behavior from hypotheses and recommendations, and check whether evidence sources are independent.
+- Mutants are coupled with real faults (Q1, Strong): Petrović et al. (ICSE 2021), 15 million mutants at Google.
+- Mutation-augmented test writing raises coverage (Q2, Moderate): Roman & Mnich 2021 controlled experiment, small-sample limits stated.
+- Coverage alone overstates test quality (Q1/Q3, supported): the proxy-metric debate is documented; mutation analysis is the stronger proxy per Q1.
 
-- [Petrović et al., Long Term Effects of Mutation Testing](https://research.google/pubs/long-term-effects-of-mutation-testing/): longitudinal analysis of approximately 15 million mutants and their relation to test-suite improvement and historical faults.
-- [Roman and Mnich, TDD with mutation testing](https://link.springer.com/article/10.1007/s11219-020-09534-x): controlled experimental evidence with stated sample and coverage limitations.
-- Check whether reported mutation or coverage findings come from independent datasets and methods; repeated results from one benchmark do not establish general effectiveness.
-- Label killed or surviving mutants as observations, explanations of why they survived as hypotheses, and test changes as recommendations until rechecked.
+Source boundary: sources support the analysis lens, not any specific coverage threshold in this skill.
 
-Confidence: medium. Freshness review: annually and after material changes to testing tools or benchmark methodology.
+Confidence: medium. Freshness: review annually and after material changes to testing tools or mutation methodology.
 
-For material conclusions, seek disconfirming evidence, distinguish observations from hypotheses and recommendations, record tradeoffs and uncertainty, and note confidence, freshness, and source independence.
-
+Disconfirmation: independent large-scale studies contradicting the mutant–fault coupling would require re-grading and possibly reversing the recommendation.
 ## Related skills and conflicts
 
 Related: `repository-change-verification`, `regression-test-design`, `differential-patch-review`, and `dependency-security-audit`. This skill does not override project-specific test policy or human review.

@@ -50,15 +50,17 @@ Bad: Skip the test or hard-code the observed output because the local platform p
 If the failure cannot be reproduced, preserve the report and add instrumentation or a controlled reproduction before changing behavior. If multiple causes remain plausible, do not choose by intuition; run a discriminating experiment or state the blocker. If the proposed fix changes the symptom but not the causal evidence, revert it and return to hypothesis testing. If the issue may be security-related, stop ordinary debugging and follow the repository’s security disclosure and containment process.
 
 ## Validation evidence and provenance
+Claims in this skill map to graded findings in [`docs/research.md`](../../docs/research.md):
 
-Separate observed symptoms from hypotheses and recommendations. Record confidence and freshness, and verify whether supporting reports or documentation are genuinely independent.
+- Observation/hypothesis/experiment discipline (F4, Principled): operationalized scientific method; not an evaluated intervention.
+- Incident discipline — clear roles, preserved facts and follow-ups (C2, Moderate): convergent postmortem practice.
+- Motivating evidence (F1, Strong): verification failure modes occur even in successful agent runs; superficial checks miss real failures.
 
-- The governing research emphasizes falsifiability, disconfirming evidence, adversarial review, empirical failure analysis, regression testing, and preserving failure learning.
-- [Google SRE: Managing Incidents](https://sre.google/sre-book/managing-incidents/): incident work benefits from clear roles, explicit communication, and preserving facts and follow-up actions while the failure is investigated.
-- The skill’s procedure applies the scientific method operationally: observations precede hypotheses, experiments distinguish explanations, and conclusions remain proportional to evidence.
-- Confidence: high for the general debugging workflow; medium for any diagnosis until the specific reproduction and regression evidence exist.
-- Freshness: review when debugging tooling, runtime architecture, or the repository’s incident and testing practices materially change.
+Source boundary: sources are design input, not proof that this debugging procedure outperforms alternatives in a given codebase.
 
+Confidence: high for the general workflow; medium for any individual diagnosis until reproduction and regression evidence exist. Freshness: review when debugging tooling or the research base changes.
+
+Disconfirmation: empirical evidence that hypothesis-table methods provide no diagnostic benefit over intuition-guided debugging at comparable skill levels would require revising the procedure's emphasis.
 ## Related skills and conflicts
 
 Related: `repository-change-verification`, `test-effectiveness-analysis`, `differential-patch-review`, `contradiction-resolution`, and `dependency-security-audit`. This skill does not authorize skipping security response, muting failures, or claiming a root cause without discriminating evidence.

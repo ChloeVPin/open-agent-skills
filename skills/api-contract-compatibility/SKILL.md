@@ -51,17 +51,17 @@ Bad: Rename a serialized field and rely on every consumer upgrading at the same 
 If consumers are unknown, treat compatibility as uncertain and use telemetry, repository search, or an explicit version boundary before breaking the interface. If old and new behavior cannot coexist, stage the migration or require an intentional breaking release. If documentation and runtime behavior disagree, report the contract as unresolved and fix the boundary before claiming compatibility. If rollback cannot restore the old contract, document the irreversible migration and require stronger review.
 
 ## Validation evidence and provenance
+Claims in this skill map to graded findings in [`docs/research.md`](../../docs/research.md):
 
-- The governing research emphasizes explicit skill anatomy, dependency graphs, lifecycle/versioning, reversibility, conflict resolution, and maintenance of temporal knowledge.
-- [RFC 9110 HTTP Semantics](https://www.rfc-editor.org/rfc/rfc9110): standardized method, status, representation, and compatibility semantics for HTTP interfaces.
-- [Semantic Versioning 2.0.0](https://semver.org/): a public contract for communicating incompatible, additive, and patch-level changes, subject to its stated assumptions.
-- [Google API Design Guide](https://cloud.google.com/apis/design): resource-oriented API design, compatibility, versioning, and evolution guidance.
-- Trace compatibility claims to their originating specification or consumer evidence; repeated recommendations copied across guides are not independent confirmation.
-- Confidence: medium-high for explicit contract and staged-evolution principles; medium for a particular compatibility classification until actual consumers and deployment constraints are known.
-- Freshness: review when consumers, version policy, serialization standards, deployment topology, or migration tooling changes.
+- HTTP semantics (C5, Strong fact): RFC 9110 defines the standardized behavior contracts that changes must respect.
+- Version-change semantics (C5, Moderate): semver communicates incompatibility classes; ecosystem effectiveness evidence is mixed, so consumer verification is required rather than version-number trust.
+- API evolution practice (C5, Moderate): Google's API design guide reflects operating internet-scale APIs.
 
-For material conclusions, seek disconfirming evidence, distinguish observations from hypotheses and recommendations, record tradeoffs and uncertainty, and note confidence, freshness, and source independence.
+Source boundary: compatibility classification for a specific interface is always verified against actual consumers, not inferred from sources.
 
+Confidence: medium-high for explicit-contract and staged-evolution principles; medium for any specific classification. Freshness: review when consumers, version policy, serialization standards, or migration tooling change.
+
+Disconfirmation: widespread evidence that version-number discipline alone suffices without consumer verification would simplify the procedure.
 ## Related skills and conflicts
 
 Related: `requirements-to-acceptance`, `behavior-preserving-refactoring`, `secure-coding-review`, `performance-regression-analysis`, `regression-test-design`, `knowledge-maintenance`, and `repository-change-verification`. This skill does not authorize breaking unknown consumers, exposing data, or treating a version number as a substitute for migration evidence.

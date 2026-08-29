@@ -49,16 +49,16 @@ Bad: Introduce an abstraction layer “for future flexibility” without a curre
 If requirements or quality attributes conflict, use `requirements-to-acceptance` or ask the owner; do not hide the conflict in a weighted score. If the current architecture cannot be mapped confidently, investigate before proposing a replacement. If evidence is insufficient, choose a reversible experiment or defer rather than pretending certainty. If a decision causes unexpected coupling or failure, contain impact, preserve the original rationale, and create a superseding decision with the new evidence.
 
 ## Validation evidence and provenance
+Claims in this skill map to graded findings in [`docs/research.md`](../../docs/research.md):
 
-- The governing research emphasizes dynamic ontologies, dependency graphs, tradeoffs over dogma, simplicity, reversibility, adversarial review, and explicit methodological change.
-- [AWS Prescriptive Guidance: Architectural Decision Record Process](https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/adr-process.html): record the context, decision, alternatives, and consequences of architectural choices.
-- Architecture observations should cite code, interfaces, measurements, or operational evidence; design explanations are hypotheses; the selected structure is a recommendation with stated tradeoffs.
-- Trace repeated pattern claims to their originating specification, measurement, or implementation; popularity and copied architecture diagrams are not independent evidence.
-- Confidence: medium-high for explicit alternatives, criteria, tradeoffs, and reversible seams; medium for predicted long-term outcomes until the design is exercised in the target workload and organization.
-- Freshness: review when requirements, workload, ownership, dependencies, deployment, failure model, or quality targets change.
+- Decision records (context, options, consequences) improve traceability (F6, Principled): established practitioner methodology; no controlled study shows ADRs prevent bad architecture.
+- Recording tradeoffs rather than presenting one choice as universal: Principled, consistent with the evidence standard's facts-versus-advice rules.
 
-For material conclusions, seek disconfirming evidence, distinguish observations from hypotheses and recommendations, record tradeoffs and uncertainty, and note confidence, freshness, and source independence.
+Source boundary: the ADR source is design input; this skill does not claim better architectural outcomes, only inspectable decisions.
 
+Confidence: medium for the methodology; low for any specific architectural judgment made while applying it. Freshness: review when the ADR guidance or research base changes.
+
+Disconfirmation: evidence that decision-record overhead yields no revisit value, or that recorded tradeoffs systematically mislead later readers, would require simplifying the practice.
 ## Related skills and conflicts
 
 Related: `requirements-to-acceptance`, `repository-exploration`, `implementation-planning`, `api-contract-compatibility`, `concurrency-and-shared-state`, `data-migration-safety`, `performance-regression-analysis`, `secure-coding-review`, and `skill-quality-review`. This skill does not authorize architecture changes without owner approval, confuse a pattern with evidence, or preserve a failed decision for consistency’s sake.

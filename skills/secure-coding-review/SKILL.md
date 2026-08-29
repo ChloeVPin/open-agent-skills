@@ -53,17 +53,17 @@ Bad: Return a stack trace or token because it helps debugging in development wit
 If the trust boundary or deployment context is unknown, narrow the review and escalate rather than assuming a safe environment. If a scanner is unavailable, perform focused manual abuse-case review and label the limitation. If a vulnerability may be exploitable, contain exposure and follow the repository’s security response process before ordinary refactoring. If the intended security property is ambiguous, stop and clarify it before choosing an implementation.
 
 ## Validation evidence and provenance
+Claims in this skill map to graded findings in [`docs/research.md`](../../docs/research.md):
 
-- The governing research requires adversarial review, explicit failure modes, safety evaluation, source hierarchy, and evidence proportional to risk.
-- [OWASP Secure Coding Practices](https://owasp.org/www-project-secure-coding-practices-quick-reference-guide/): input validation, output encoding, authentication, access control, cryptographic practices, error handling, and logging controls.
-- [OWASP Top 10](https://owasp.org/www-project-top-ten/): recurring application-security risk categories and prevention guidance.
-- [CWE](https://cwe.mitre.org/): weakness descriptions and mitigations for reasoning about concrete failure mechanisms.
-- Label observed data flows and failures separately from exploitability hypotheses and recommended controls; do not report a possibility as a confirmed vulnerability without evidence.
-- Confidence: high for the boundary-review principles; medium for severity and applicability until the deployment context and threat model are known.
-- Freshness: review when security standards, deployment architecture, threat model, or relevant dependencies materially change.
+- Prevalence ranking of application-security risks (S1, Moderate): OWASP Top 10 aggregates industry incident data — an aggregation, not a controlled study.
+- Defect taxonomy (S1, Strong fact): CWE classification; OWASP Secure Coding Practices as the checkable checklist.
+- Trust-boundary and abuse-case review improving recall (S1, Principled): methodology claim, not measured.
 
-For material conclusions, seek disconfirming evidence, distinguish observations from hypotheses and recommendations, record tradeoffs and uncertainty, and note confidence, freshness, and source independence.
+Source boundary: checklist coverage does not establish that this review finds all exploitable defects in a given codebase.
 
+Confidence: medium for the risk framing; medium-low for any specific finding until reachability and exploitability are demonstrated. Freshness: review when OWASP editions, CWE versions, or the research base change.
+
+Disconfirmation: evidence that abuse-case-driven review misses defect classes that pattern checklists catch would re-balance the procedure's emphasis.
 ## Related skills and conflicts
 
 Related: `dependency-security-audit`, `tool-authorization-audit`, `repository-change-verification`, `requirements-to-acceptance`, `evidence-driven-debugging`, and `test-effectiveness-analysis`. This skill does not authorize bypassing security policy, exposing secrets for diagnosis, or substituting a checklist for specialist review of high-risk systems.

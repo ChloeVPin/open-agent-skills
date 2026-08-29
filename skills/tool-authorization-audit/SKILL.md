@@ -53,18 +53,16 @@ Bad: Approve broad shell or wildcard access because the current prompt appears h
 If the required authority cannot be distinguished from the granted authority, stop and escalate. If a tool exposes unrestricted shell or wildcard resources, constrain it or keep it untrusted. If approval identity or expiry cannot be verified, do not execute high-impact actions. If logs contain secrets, revoke and rotate affected credentials and repair the logging boundary.
 
 ## Validation evidence and provenance
+Claims in this skill map to graded findings in [`docs/research.md`](../../docs/research.md):
 
-Record confidence and freshness for each authorization conclusion, separate observations from hypotheses and recommendations, and verify the independence of corroborating evidence.
+- Least-privilege tool scoping, explicit authorization, and human confirmation for high-impact actions (S6, Moderate): OWASP AI Agent Security and MCP Security cheat sheets; convergent emerging practice.
+- Standardization direction (S6 fact): NIST AI Agent Standards Initiative signals active standardization; nothing is settled yet.
 
-- [OWASP AI Agent Security Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/AI_Agent_Security_Cheat_Sheet.html): tool security, least privilege, explicit authorization, and high-impact action controls.
-- [NIST AI Agent Standards Initiative](https://www.nist.gov/artificial-intelligence/ai-agent-standards-initiative): agent authentication and identity infrastructure research priorities.
-- [OWASP MCP Security Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/MCP_Security_Cheat_Sheet.html): minimum permissions, strict parameter schemas, and server isolation guidance.
-- Label observed tool scopes and call behavior separately from abuse hypotheses and recommended permission changes; a theoretical path is not evidence of exploitation.
+Source boundary: the domain is young; controls are practitioner guidance, not empirically validated defenses. Theoretical exposure paths are labeled hypotheses, not evidence of exploitation.
 
-Confidence: medium. Freshness review: after tool, identity, or permission-model changes and at least quarterly.
+Confidence: medium. Lifecycle remains `draft` pending real-world validation. Freshness: review after tool, identity, or permission-model changes and at least quarterly.
 
-For material conclusions, seek disconfirming evidence, distinguish observations from hypotheses and recommendations, record tradeoffs and uncertainty, and note confidence, freshness, and source independence.
-
+Disconfirmation: incident evidence showing these controls fail against specific attack patterns would require revising the audit criteria; stable standards would upgrade the sources.
 ## Related skills and conflicts
 
 Related: `repository-change-verification`, `dependency-security-audit`, `secure-coding-review`, and `prompt-injection-resistance`. This skill does not override platform authorization or human approval requirements.

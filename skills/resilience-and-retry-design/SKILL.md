@@ -54,17 +54,16 @@ Bad: Return cached sensitive data indefinitely because the dependency is unavail
 If idempotence or timeout semantics are unknown, do not add retries; resolve the dependency contract or use a non-retry path. If retry amplification or overload appears, stop retries, shed load, protect the dependency, and follow incident procedures. If a fallback may violate correctness, privacy, or authorization, fail safely and escalate. If a circuit or queue remains open, preserve evidence and define recovery rather than adding unlimited retries.
 
 ## Validation evidence and provenance
+Claims in this skill map to graded findings in [`docs/research.md`](../../docs/research.md):
 
-- The governing research emphasizes failure recovery, empirical failure analysis, unknown-unknown detection, simplicity, tradeoffs, and reversible decisions.
-- Reliability behavior is workload- and dependency-specific: observed latency, errors, capacity, and side effects are evidence; retry or fallback choices are hypotheses and recommendations until tested.
-- [Google SRE: Handling Overload](https://sre.google/sre-book/handling-overload/): retry budgets, avoiding retry amplification, and differentiated overload responses.
-- [Google SRE: Addressing Cascading Failures](https://sre.google/sre-book/addressing-cascading-failures/): deadlines, cancellation, and retry-driven overload as interacting failure modes.
-- Trace dependency behavior to authoritative contracts and independent operational evidence; repeated retry recipes are not independent proof of safety.
-- Confidence: high for bounded budgets, idempotence, explicit failure classes, and overload protection; medium for parameter values and fallback semantics until measured in the target system.
-- Freshness: review when dependency contracts, load, latency/error distributions, queueing, user impact, or failure modes change.
+- Unbounded retries amplify load and cascades propagate through retry feedback loops (Q5, Moderate): Google SRE cascading-failure and overload chapters; convergent practitioner evidence including documented large-scale outages.
+- Bounded retries, jitter, budgets, and load shedding as mitigation (Q5, Moderate): same source; specific bound values are deployment-specific decisions.
 
-For material conclusions, seek disconfirming evidence, distinguish observations from hypotheses and recommendations, record tradeoffs and uncertainty, and note confidence, freshness, and source independence.
+Source boundary: practitioner references are not controlled studies; graded accordingly.
 
+Confidence: medium. Freshness: review when the research base or dependency-failure evidence changes.
+
+Disconfirmation: evidence that unbounded retry policies do not measurably increase cascading risk in modern systems would require re-grading the bounds requirement.
 ## Related skills and conflicts
 
 Related: `concurrency-and-shared-state`, `evidence-driven-debugging`, `observability-and-instrumentation`, `performance-regression-analysis`, `api-contract-compatibility`, `secure-coding-review`, `release-and-rollback-safety`, and `repository-change-verification`. This skill does not authorize infinite retries, hiding failures, duplicating side effects, or weakening correctness for apparent availability.

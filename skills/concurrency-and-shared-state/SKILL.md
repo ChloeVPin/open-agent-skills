@@ -49,16 +49,16 @@ Bad: Run a stress test once without controlling schedules and conclude that no r
 If the memory or transaction model is unknown, stop and resolve it before reasoning about safety. If a failure is schedule-dependent, preserve the schedule or add deterministic instrumentation rather than adding sleeps or retries. If deadlock, data loss, or duplicate external effects are possible, contain exposure and follow incident/recovery procedures. If correctness depends on an unverified timing assumption, narrow the claim and redesign around explicit coordination.
 
 ## Validation evidence and provenance
+Claims in this skill map to graded findings in [`docs/research.md`](../../docs/research.md):
 
-- The governing research identifies concurrency and correctness-critical systems as candidates for empirical and formal validation, adversarial testing, and explicit failure recovery.
-- [The Go Memory Model](https://go.dev/ref/mem): concurrent reasoning depends on the language memory model and its happens-before guarantees; synchronization assumptions must be stated rather than inferred.
-- Concurrent correctness is a property of allowed interleavings and the language/runtime model; a passing sequential test is insufficient evidence.
-- Check whether concurrency guidance and observed failures come from independent models or merely repeat one assumption; distinguish a source specification from an implementation-specific observation.
-- Confidence: medium-high for ownership, invariant, interleaving, liveness, and idempotence principles; medium for any implementation strategy until its model and schedules are tested.
-- Freshness: review when language/runtime memory semantics, workload, synchronization primitives, failure model, or external side effects change.
+- Memory-model facts (Q4, Strong per language): the Go Memory Model precisely defines happens-before and visibility; analogous models exist in C++, Java, and Rust.
+- Cross-language procedure (Q4, Inferential): the identify-shared-state/synchronization/ordering steps generalize by analogy, not by study.
 
-For material conclusions, seek disconfirming evidence, distinguish observations from hypotheses and recommendations, record tradeoffs and uncertainty, and note confidence, freshness, and source independence.
+Source boundary: one language's model is cited as the canonical example; procedures must consult the target language's model, not extrapolate blindly.
 
+Confidence: high for the cited model; medium for interleaving analyses until tested under stress or race detection. Freshness: review when language memory models or the research base change.
+
+Disconfirmation: evidence that model-based reasoning misses common defect classes that empirical race detection catches would shift the procedure toward tool-first checking.
 ## Related skills and conflicts
 
 Related: `evidence-driven-debugging`, `regression-test-design`, `test-effectiveness-analysis`, `performance-regression-analysis`, `observability-and-instrumentation`, `secure-coding-review`, `data-migration-safety`, and `repository-change-verification`. This skill does not authorize weakening synchronization, hiding races with sleeps, or claiming concurrency safety from a single stress run.

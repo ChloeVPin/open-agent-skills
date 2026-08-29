@@ -53,14 +53,17 @@ Bad: Mark the finding false positive because ordinary tests happen to pass.
 If the tool’s semantics or configuration are unknown, establish them before relying on the report. If a diagnostic cannot be classified, preserve it as unresolved and seek a reproduction or specialist review. If a suppression is necessary, narrow and document it rather than weakening global policy. If the analyzer is too noisy or expensive, tune scope and rules using measured false-positive and missed-risk evidence; do not optimize the metric by hiding findings.
 
 ## Validation evidence and provenance
+Claims in this skill map to graded findings in [`docs/research.md`](../../docs/research.md):
 
-- The governing research emphasizes verification over assertion, explicit uncertainty, adversarial testing, source independence, simplicity, and tradeoffs over dogma.
-- [MITRE CWE](https://cwe.mitre.org/): a maintained weakness taxonomy supports consistent classification of recurring software defects while leaving project-specific severity and applicability to evidence.
-- Static-analysis results are observations conditioned on tool/version/configuration and modeled properties; explanations are hypotheses; fixes or suppressions are recommendations until runtime and boundary evidence support them.
-- Trace analyzer rules and language semantics to primary documentation and distinguish independent findings from multiple tools sharing the same model or source.
-- Confidence: high for treating diagnostics as bounded evidence and suppressions as risk decisions; medium for any particular tool’s coverage until its configuration and blind spots are known.
-- Freshness: review when language/runtime versions, analyzer rules, generated code, type contracts, repository policy, or CI configuration changes.
+- Defect taxonomy (Q3, Strong fact): CWE provides the common classification; analyzers map code to it deterministically.
+- Findings are observations, not exploitability proofs (Q3, Moderate): the gap between finding and reachable defect requires triage.
+- Superficial checks miss real failures (F1, Strong): supports the no-blind-suppression rule.
 
+Source boundary: tool documentation describes capabilities; it does not establish that triage procedures prevent shipped defects.
+
+Confidence: high for treating diagnostics as bounded evidence; medium for any tool's coverage until its configuration and blind spots are known. Freshness: review when language/runtime versions, analyzer rules, or CI configuration change.
+
+Disconfirmation: evidence that suppression-without-triage does not increase defect escape rates would weaken the triage requirement.
 ## Related skills and conflicts
 
 Related: `regression-test-design`, `test-effectiveness-analysis`, `secure-coding-review`, `requirements-to-acceptance`, `behavior-preserving-refactoring`, `build-and-ci-integrity`, and `repository-change-verification`. This skill does not authorize disabling checks, hiding warnings, or treating type/static correctness as proof of runtime or security correctness.

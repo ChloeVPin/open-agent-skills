@@ -49,16 +49,16 @@ Bad: Optimize a loop until a microbenchmark improves while ignoring increased me
 If no representative workload or baseline exists, narrow the claim and build measurement first; do not invent a win. If results vary materially, investigate environment, warm-up, contention, randomness, and workload distribution before selecting a favorable sample. If profiling is inconclusive, preserve uncertainty and test competing hypotheses. If a performance change alters correctness or safety, treat it as a separate behavioral change and route it through the appropriate review skills.
 
 ## Validation evidence and provenance
+Claims in this skill map to graded findings in [`docs/research.md`](../../docs/research.md):
 
-- The governing research requires empirical validation, benchmarking, substantive progress measures, boundary analysis, and tradeoffs over dogma.
-- Benchmark results are observations conditioned on workload and environment; they do not prove universal performance or correctness.
-- [Google SRE: Service Level Objectives](https://sre.google/sre-book/service-level-objectives/): explains why latency distributions and high percentiles can reveal regressions hidden by averages.
-- Treat repeated benchmark claims as one line of evidence when they share the same workload, implementation, environment, or source; seek an independent workload or measurement method before generalizing.
-- Confidence: high for baseline/measurement discipline; medium for optimization choices until profiling and representative results support them.
-- Freshness: review when workload distribution, hardware, runtime, dependencies, architecture, or performance targets change.
+- SLOs and error budgets define the measurement contract (Q6, Moderate): Google SRE SLO chapter; practitioner consensus.
+- Representative workloads and before/after baselines (Q6-built methodology, Principled): design rules on top of the SLO frame.
 
-For material conclusions, seek disconfirming evidence, distinguish observations from hypotheses and recommendations, record tradeoffs and uncertainty, and note confidence, freshness, and source independence.
+Source boundary: the sources do not evaluate benchmarking procedures for specific stacks; workload realism must be verified per repository.
 
+Confidence: medium. Freshness: review when the research base, workload tooling, or SLO practice changes.
+
+Disconfirmation: evidence that synthetic regression benchmarks reliably predict field performance would justify lighter procedures; evidence they diverge strengthens the representativeness requirement.
 ## Related skills and conflicts
 
 Related: `evidence-driven-debugging`, `observability-and-instrumentation`, `behavior-preserving-refactoring`, `differential-patch-review`, `regression-test-design`, `secure-coding-review`, and `repository-change-verification`. This skill does not authorize weakening correctness, security, or reliability to obtain a benchmark improvement.

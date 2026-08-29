@@ -49,14 +49,16 @@ Bad: Generalize from a narrow benchmark to “works for coding” without checki
 If no trustworthy oracle or representative task sample exists, narrow the claim and improve the evaluation before ranking agents. If evaluator disagreement is high, investigate the rubric and task ambiguity rather than averaging it away. If task leakage or environment drift is discovered, quarantine affected results and rerun or label them. If a metric improves while safety, maintainability, or failure severity worsens, reject the metric as the optimization target.
 
 ## Validation evidence and provenance
+Claims in this skill map to graded findings in [`docs/research.md`](../../docs/research.md):
 
-- The governing research requires meaningful progress measures, adversarial validation, empirical failure analysis, benchmark anti-gaming, source independence, and explicit uncertainty.
-- [SWE-bench](https://www.swebench.com/): a benchmark for evaluating language models on real GitHub software-engineering issues, with task and evaluation assumptions that must be understood before generalizing.
-- [Are “Solved Issues” in SWE-bench Really Solved Correctly?](https://arxiv.org/abs/2503.15223): evidence that benchmark-passing patches can still contain behavioral discrepancies, motivating broader evaluation.
-- Label task outcomes and measurements as observations, causal explanations as hypotheses, and adoption decisions as recommendations; trace repeated benchmark claims to independent datasets and evaluators.
-- Confidence: high for distribution-aware and multi-dimensional evaluation principles; medium for any benchmark’s external validity until its sampling, leakage, evaluator, and environment limits are examined.
-- Freshness: review when models, tools, task distributions, evaluators, benchmarks, or safety expectations change.
+- Benchmark resolution rates overstate capability (Q12, Strong): 7.8% of SWE-bench "correct" patches fail developer-written tests; ~6.2-point inflation (Wang et al. 2025); SWE-bench itself documents evaluation limits.
+- Metric gaming risk (Q12-built, Principled): Goodhart concerns operationalized as multi-dimensional, distribution-aware evaluation.
 
+Source boundary: evidence comes from benchmark evaluation studies; it does not establish that this skill's evaluation design avoids gaming in new domains.
+
+Confidence: high for the failure evidence; medium for evaluation-design choices. Lifecycle remains `draft`: agent evaluation is a fast-moving domain. Freshness: review when models, benchmarks, evaluators, or the research base change.
+
+Disconfirmation: benchmarks with independently verified correctness at scale would reduce the need for the differential verification steps.
 ## Related skills and conflicts
 
 Related: `test-effectiveness-analysis`, `regression-test-design`, `differential-patch-review`, `performance-regression-analysis`, `secure-coding-review`, `prompt-injection-resistance`, `skill-quality-review`, and `knowledge-maintenance`. This skill does not authorize benchmarking on production data, exposing secrets, optimizing for a misleading metric, or claiming general capability from a narrow result.

@@ -49,17 +49,17 @@ Bad: Call data anonymous because names were removed while retaining a uniquely l
 If purpose, data classification, recipients, or retention is unknown, pause the change and resolve the uncertainty. If sensitive data was exposed or over-collected, contain access, preserve evidence, notify the responsible privacy/security process, and follow incident requirements; do not merely delete the visible log. If deletion is incomplete, identify copies and backups and record the residual state. If a less invasive design cannot meet the purpose, document the tradeoff and obtain the required owner decision.
 
 ## Validation evidence and provenance
+Claims in this skill map to graded findings in [`docs/research.md`](../../docs/research.md):
 
-- The governing research requires explicit uncertainty, source hierarchy, failure recovery, safety evaluation, provenance, and maintenance across an artifact’s lifecycle.
-- [NIST Privacy Framework](https://www.nist.gov/privacy-framework): a voluntary risk-management framework for identifying and managing privacy risk across data processing and its ecosystem.
-- [NIST Privacy Framework: Getting Started](https://www.nist.gov/privacy-framework/getting-started-0): privacy problems can arise throughout the lifecycle from collection through disposal and can affect individuals and groups.
-- Trace privacy claims to the originating framework, policy, or user-impact evidence; copied compliance summaries do not independently establish safety or legality.
-- Label observed data flows separately from inferred individual impact and recommended controls; do not state a legal conclusion as an engineering fact.
-- Confidence: medium-high for purpose, minimization, lifecycle, and impact analysis; medium for risk severity and control sufficiency until jurisdiction, threat model, scale, and owner review are known.
-- Freshness: review when data flows, models/tools, recipients, jurisdictions, retention policy, security controls, or privacy guidance changes.
+- Lifecycle-stage privacy controls (S2, Moderate structure): NIST Privacy Framework core functions; voluntary guidance, comprehensive coverage.
+- Agent-specific privacy risks in inputs, outputs, and telemetry (S5, Moderate): NIST AI 600-1 generative-AI risk enumeration.
+- Specific minimization rules (S2-built, Principled): derived from the framework, not evaluated as controls.
 
-For material conclusions, seek disconfirming evidence, distinguish observations from hypotheses and recommendations, record tradeoffs and uncertainty, and note confidence, freshness, and source independence.
+Source boundary: frameworks enumerate risk and structure; they do not certify any implementation as compliant with law or policy.
 
+Confidence: medium for the risk structure; medium-low for completeness in any jurisdiction — legal review stays outside this skill's scope. Freshness: review when NIST publications, regulation, or the research base change.
+
+Disconfirmation: a materially different authoritative privacy structure, or evidence that lifecycle controls miss a recurring leak class, would require revision.
 ## Related skills and conflicts
 
 Related: `secure-coding-review`, `tool-authorization-audit`, `observability-and-instrumentation`, `data-migration-safety`, `api-contract-compatibility`, `requirements-to-acceptance`, and `knowledge-maintenance`. This skill does not authorize collecting data, making legal compliance claims, weakening access controls, or exposing sensitive records for convenience.

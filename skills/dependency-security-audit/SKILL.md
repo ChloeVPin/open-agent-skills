@@ -51,18 +51,17 @@ Bad: Approve the package because installation succeeds or because it is popular.
 If a package cannot be resolved from an authoritative source, stop and reject or escalate; do not guess. If advisory data is unavailable or stale, record the limitation and keep the change below trusted status. If a lockfile changes without an understandable graph explanation, regenerate from a clean baseline and review the full diff.
 
 ## Validation evidence and provenance
+Claims in this skill map to graded findings in [`docs/research.md`](../../docs/research.md):
 
-Record confidence and freshness for each advisory or risk conclusion, distinguish observed facts from hypotheses and recommendations, and verify that corroborating sources are independent.
+- Package hallucination by code-generating LLMs creates supply-chain injection vectors (S4/F1, Strong): Spracklen et al., USENIX Security 2025 — controlled measurement.
+- Dependency-review mechanism facts (S4, Strong vendor fact): GitHub dependency review behavior is documented.
+- Generative-AI risk framing (S5, Moderate): NIST AI 600-1.
 
-- [GitHub dependency review documentation](https://docs.github.com/en/code-security/concepts/supply-chain-security/dependency-review): dependency diffs can be scanned and enforced in pull requests.
-- [OWASP Secure Coding with AI](https://cheatsheetseries.owasp.org/cheatsheets/Secure_Coding_with_AI_Cheat_Sheet.html): hallucinated dependencies, outdated CVEs, and AI-modified build/deploy paths are explicit risks.
-- [NIST AI RMF: Generative AI Profile](https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf): lifecycle risk-management guidance for generative AI systems.
-- Label resolved package facts and advisory observations separately from inferred exploitability and recommended action; do not treat an unresolved hypothesis as a finding.
+Source boundary: vulnerability databases and review tools describe known problems; a clean audit is not proof of safety.
 
-Confidence: medium-high for the audit procedure; medium for prioritization as the next skill. Freshness review: on dependency-policy changes and at least quarterly.
+Confidence: medium for audit completeness; high for the hallucination threat evidence. Freshness: review when the research base, advisory databases, or ecosystem tooling change.
 
-For material conclusions, seek disconfirming evidence, distinguish observations from hypotheses and recommendations, record tradeoffs and uncertainty, and note confidence, freshness, and source independence.
-
+Disconfirmation: evidence that hallucinated-package risk is mitigated by registries at scale, or that dependency review misses the dominant real-world compromise channel, would redirect the procedure.
 ## Related skills and conflicts
 
 Related: `repository-change-verification`, `build-and-ci-integrity`, `secure-coding-review`, `configuration-and-secrets-safety`, and `regression-test-design`. This skill does not override repository-specific security policies or required human approval.

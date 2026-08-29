@@ -49,17 +49,17 @@ Bad: Remove all comments, or delete a historical warning because the workaround 
 If tooling reports a candidate but usage cannot be ruled out, classify it as uncertain and keep it. If generated or dynamic behavior prevents complete search, narrow the claim and ask the owner or inspect runtime evidence. If deletion changes behavior, restore the narrow change and route the issue to behavior-preserving refactoring or debugging. If the requested cleanup is destructive or overlaps user changes, stop and obtain explicit approval.
 
 ## Validation evidence and provenance
+Claims in this skill map to graded findings in [`docs/research.md`](../../docs/research.md):
 
-- The governing research requires evidence before deletion, preserved uncertainty, reversible changes, adversarial review, and progress measured by reduced risk rather than file count.
-- [TypeScript `noUnusedLocals`](https://www.typescriptlang.org/tsconfig/noUnusedLocals.html): compiler diagnostics can identify unused local declarations while remaining bounded by the compiler’s visibility and language model.
-- [ESLint `no-unused-vars`](https://eslint.org/docs/latest/rules/no-unused-vars): static unused-variable findings require configuration and scope interpretation rather than automatic deletion.
-- [Git `blame` documentation](https://git-scm.com/docs/git-blame): line history can provide context for comments and compatibility code, but age is not proof that a line is unnecessary.
-- Treat analyzer output, search results, history, and owner reports as distinct evidence only when their provenance and blind spots are independent. Label observed references separately from hypotheses about reachability and recommendations about removal.
-- Confidence: medium-high for the evidence-first cleanup procedure; medium for any deadness conclusion until dynamic access, external consumers, and ownership boundaries are checked.
-- Freshness: review when language tooling, build/registration conventions, public API policy, repository topology, or deployment behavior changes.
+- Tool facts (C4, Strong): `noUnusedLocals`, `no-unused-vars`, and `git blame` are documented, deterministic tools.
+- Tool-blindness limits (C4, Inferential): static tools cannot see reflection, dynamic dispatch, or cross-repository consumers — hence mandatory caller checks before deletion.
+- Removal rationale preservation (F3, Moderate): relevant context belongs where future readers will find it.
 
-For material conclusions, seek disconfirming evidence, distinguish observations from hypotheses and recommendations, record tradeoffs and uncertainty, and note confidence, freshness, and source independence.
+Source boundary: the safety of any individual removal is verified per-case by the procedure, not by the sources.
 
+Confidence: high for tool facts; medium for removal safety until callers and consumers are verified. Freshness: review when referenced tools or language semantics change.
+
+Disconfirmation: a case class where tool-clean, caller-checked removal still broke behavior would require adding that boundary check to the procedure.
 ## Related skills and conflicts
 
 Related: `behavior-preserving-refactoring`, `repository-exploration`, `repository-change-verification`, `safe-git-workflow`, `static-analysis-and-type-safety`, and `knowledge-maintenance`. This skill does not authorize deleting public APIs, generated files, user work, legal notices, compatibility code, or comments merely because they look redundant.

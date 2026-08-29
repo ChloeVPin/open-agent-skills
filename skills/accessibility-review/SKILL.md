@@ -53,17 +53,17 @@ Bad: Increase contrast in a screenshot while leaving the chart’s data inaccess
 If the platform, users, or conformance target is unknown, narrow the claim and ask for the missing context. If automated tooling passes but a manual task fails, trust the observed barrier and investigate the interaction. If a barrier cannot be fixed immediately, provide an equivalent usable path, document the limitation and owner, and do not claim conformance. If testing requires assistive technology or user expertise that is unavailable, record the gap and seek qualified review.
 
 ## Validation evidence and provenance
+Claims in this skill map to graded findings in [`docs/research.md`](../../docs/research.md):
 
-- The governing research requires explicit scope, failure modes, adversarial review, uncertainty, primary evidence, and validation beyond superficial activity metrics.
-- [W3C WCAG 2 Overview](https://www.w3.org/WAI/standards-guidelines/wcag/): WCAG 2.2 is a stable technical standard organized around perceivable, operable, understandable, and robust principles with testable success criteria.
-- [W3C WCAG 2.2 Recommendation](https://www.w3.org/TR/WCAG22/): normative success criteria and conformance framework.
-- [W3C WAI-ARIA Authoring Practices](https://www.w3.org/WAI/ARIA/apg/): interaction and keyboard patterns for accessible custom widgets.
-- Treat standards, automated results, and user reports as distinct evidence only when their provenance is independent; repeated guidance from one source is one line of evidence.
-- Confidence: medium-high for the review principles; medium for any conformance or barrier conclusion until the target platform, assistive technology coverage, and affected-user testing are known.
-- Freshness: review when WCAG/platform guidance, supported devices, interaction patterns, or accessibility policy changes.
+- WCAG 2.2 success criteria are testable (Q8, Strong standard fact): W3C Recommendation with a normative conformance framework.
+- ARIA Authoring Practices patterns (Q8, Strong authorial guidance): pattern-level implementation guidance from W3C.
+- Automated tooling finds a minority of real barriers (Q8, Moderate): hence task-based and assistive-technology review, not tool output alone.
 
-For material conclusions, seek disconfirming evidence, distinguish observations from hypotheses and recommendations, record tradeoffs and uncertainty, and note confidence, freshness, and source independence.
+Source boundary: conformance to criteria is objective; the claim that this review procedure catches most user-facing barriers is not evaluated.
 
+Confidence: high for the criteria facts; medium for any specific conformance or barrier conclusion until platform and assistive-technology coverage are known. Freshness: review when WCAG/platform guidance, devices, or accessibility policy change.
+
+Disconfirmation: evidence that automated tooling now detects the large majority of real barriers would justify a lighter manual procedure.
 ## Related skills and conflicts
 
 Related: `api-contract-compatibility`, `requirements-to-acceptance`, `secure-coding-review`, `regression-test-design`, `observability-and-instrumentation`, `performance-regression-analysis`, and `repository-change-verification`. This skill does not authorize claiming legal conformance, replacing disabled-user evaluation with automation, or weakening accessibility to satisfy a visual or performance target.

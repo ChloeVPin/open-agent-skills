@@ -52,20 +52,17 @@ Bad: Accept a green patch without checking what the tests do not cover.
 If tests cannot run, record the exact command and blocker; do not claim validation. If the specification is ambiguous, pause for clarification or narrow the decision explicitly. If the patch passes tests but changes undocumented behavior, compare against the request and baseline, add a regression test, and revise or reject it.
 
 ## Validation evidence and provenance
+Claims in this skill map to graded findings in [`docs/research.md`](../../docs/research.md):
 
-Record confidence and freshness for every verification claim, distinguish observed results from hypotheses and recommendations, and do not count copied outputs as independent evidence.
+- Benchmark-passing patches can be wrong (F1, Q12, Strong): 7.8% of SWE-bench "correct" patches fail developer tests; resolution rates inflate ~6.2 points.
+- Differential comparison as detection method (C1, Strong): PatchDiff's automated behavioral-discrepancy testing.
+- Verification failure modes even in successful runs (F1, Strong): MAST FM-3.2/FM-3.3.
 
-- Jimenez et al., [SWE-bench](https://arxiv.org/abs/2310.06770), 2023.
-- Wang, Pradel, and Liu, [Are “Solved Issues” in SWE-bench Really Solved Correctly?](https://arxiv.org/abs/2503.15223), 2025/2026 publication record.
-- [GitHub: About pull requests](https://docs.github.com/en/pull-requests/get-started/about-pull-requests).
-- [OWASP: Secure Coding with AI](https://cheatsheetseries.owasp.org/cheatsheets/Secure_Coding_with_AI_Cheat_Sheet.html).
-- Trace important claims to primary evidence and assess source independence; multiple summaries of one benchmark or policy are not multiple confirmations.
-- Label diff and test findings as observations, causal interpretations as hypotheses, and accept/revise/reject outcomes as recommendations supported by the evidence.
+Source boundary: the sources establish the failure mode, not this skill's specific checklist; the checklist is design inference.
 
-Confidence: medium-high. Freshness review: annually, and immediately after material changes to agent tooling, CI policy, or supply-chain guidance.
+Confidence: medium. Freshness: review when agent-evaluation evidence or the research base changes.
 
-For material conclusions, seek disconfirming evidence, distinguish observations from hypotheses and recommendations, record tradeoffs and uncertainty, and note confidence, freshness, and source independence.
-
+Disconfirmation: evidence that layered verification adds no recall beyond the project's own test suite at acceptable cost would reduce the procedure to that suite plus boundary checks.
 ## Related skills and conflicts
 
 Related: `regression-test-design`, `dependency-security-audit`, `secure-coding-review`, `safe-git-workflow`, and `differential-patch-review`. This skill does not override repository-specific policies or required human approvals.

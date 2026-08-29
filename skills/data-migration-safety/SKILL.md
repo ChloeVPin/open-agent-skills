@@ -50,17 +50,17 @@ Bad: Ignore conversion errors so the migration command exits successfully.
 If data ownership, invariants, or restore capability is unknown, stop and resolve them before modifying persisted state. If a batch partially fails, resume from a verified checkpoint or reconcile it; do not blindly rerun a non-idempotent operation. If integrity checks diverge, pause consumers where authorized, preserve evidence, and choose restore, rollback of compatible code, forward repair, or reconciliation based on the actual mutation. If the migration is irreversible, require stronger approval and a tested recovery plan before execution.
 
 ## Validation evidence and provenance
+Claims in this skill map to graded findings in [`docs/research.md`](../../docs/research.md):
 
-- The governing research emphasizes lifecycle management, provenance, reversibility, failure recovery, dependency graphs, empirical validation, and explicit uncertainty.
-- [Martin Fowler: Evolutionary Database Design](https://martinfowler.com/articles/evodb.html): incremental schema evolution and compatibility patterns for continuously delivered systems.
-- [Google SRE: Data Integrity](https://sre.google/sre-book/data-integrity/): protecting, detecting, and recovering from data loss or corruption.
-- [PostgreSQL documentation: SQL ALTER TABLE](https://www.postgresql.org/docs/current/sql-altertable.html): operation-specific locking and rewrite behavior must be checked rather than assumed.
-- Trace migration claims to the storage engine’s authoritative behavior and independent workload evidence; repeated blog or tool recommendations are not independent proof.
-- Confidence: medium-high for additive, measured, resumable migration principles; medium for a particular strategy until database behavior, workload, and recovery capabilities are known.
-- Freshness: review when schema, storage engine, volume, deployment overlap, backup/restore, or data-governance policy changes.
+- Lock and rewrite semantics of schema operations (Q11, Strong vendor fact): PostgreSQL `ALTER TABLE` documents them precisely.
+- Expand–migrate–contract pattern (Q11, Principled): Fowler's evolutionary database design; practitioner methodology.
+- Recovery boundaries and integrity (Q11, Moderate): Google SRE data integrity chapter.
 
-For material conclusions, seek disconfirming evidence, distinguish observations from hypotheses and recommendations, record tradeoffs and uncertainty, and note confidence, freshness, and source independence.
+Source boundary: the sources support the pattern and the cost facts; migration correctness for a specific schema is verified by the procedure, not the sources.
 
+Confidence: medium-high for reversible-change principles; medium for any specific migration until rehearsed on production-like data. Freshness: review when database engines, the research base, or migration tooling change.
+
+Disconfirmation: engine-level features that make destructive operations safely reversible would simplify the expand/contract choreography.
 ## Related skills and conflicts
 
 Related: `api-contract-compatibility`, `release-and-rollback-safety`, `secure-coding-review`, `performance-regression-analysis`, `observability-and-instrumentation`, `regression-test-design`, and `knowledge-maintenance`. This skill does not authorize destructive data changes, bypassing ownership approval, or calling a migration reversible without testing recovery.

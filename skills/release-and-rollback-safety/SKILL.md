@@ -49,17 +49,16 @@ Bad: Deploy to all users and decide whether it worked from the absence of an imm
 If rollback is unsafe or unknown, stop the rollout and design forward recovery or a compatible transition before exposure increases. If health signals are missing, keep the change below trusted release status and add the minimum decision-relevant observability. If an external side effect cannot be undone, contain further effects, record the irreversibility, and escalate. If a release partially succeeds, preserve the exact state and versions before attempting repair.
 
 ## Validation evidence and provenance
+Claims in this skill map to graded findings in [`docs/research.md`](../../docs/research.md):
 
-- The governing research emphasizes reversibility, failure recovery, lifecycle maintenance, anomaly detection, meaningful progress, and explicit stopping rules.
-- [Google SRE: Release Engineering](https://sre.google/sre-book/release-engineering/): reproducible releases, automation, and controlled delivery reduce operational risk.
-- [Google SRE: Managing Incidents](https://sre.google/sre-book/managing-incidents/): clear roles, communication, mitigation, and learning during failures.
-- [DORA: Continuous Delivery](https://dora.dev/capabilities/continuous-delivery/): small batches, automation, and reliable delivery practices, subject to organizational context.
-- Check whether release guidance and health signals come from independent evidence; repeated deployment advice or metrics derived from one source do not confirm safety by themselves.
-- Confidence: medium-high for staged exposure, explicit health signals, and recovery planning; medium for a particular rollout strategy until system topology and irreversibility are known.
-- Freshness: review when deployment topology, release tooling, data lifecycle, ownership, or incident policy changes.
+- Staged rollouts, canaries, and fast rollback limit incident impact (Q10, Moderate): Google SRE release engineering; DORA continuous-delivery research (large multi-year surveys, self-reported).
+- Incident discipline during release failures (C2, Moderate): preserved facts, explicit communication, follow-ups.
 
-For material conclusions, seek disconfirming evidence, distinguish observations from hypotheses and recommendations, record tradeoffs and uncertainty, and note confidence, freshness, and source independence.
+Source boundary: survey-based evidence links the practice to outcomes but does not prove causation for any specific deployment.
 
+Confidence: medium. Freshness: review when deployment platforms, the research base, or DORA findings change.
+
+Disconfirmation: evidence that staged delivery materially delays incident detection without reducing blast radius would require re-weighting canary stages.
 ## Related skills and conflicts
 
 Related: `api-contract-compatibility`, `observability-and-instrumentation`, `secure-coding-review`, `dependency-security-audit`, `performance-regression-analysis`, `knowledge-maintenance`, and `repository-change-verification`. This skill does not authorize production changes, bypass approvals, or claim rollback safety without checking data and external side effects.

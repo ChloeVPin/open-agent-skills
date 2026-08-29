@@ -54,16 +54,17 @@ Bad: Combine a refactor with a dependency upgrade and a behavior fix, making fai
 If the preservation contract is unclear, use `requirements-to-acceptance` or ask before editing. If baseline behavior cannot be observed, narrow the claim and add characterization or instrumentation first. If a difference appears, stop broadening the refactor; reproduce it, classify it, and either restore behavior or record a separately reviewed change. If rollback is difficult, reduce the step size before proceeding.
 
 ## Validation evidence and provenance
+Claims in this skill map to graded findings in [`docs/research.md`](../../docs/research.md):
 
-- The governing research prioritizes simplicity, reversibility, composability, explicit tradeoffs, adversarial review, regression analysis, and evidence over convention.
-- [Martin Fowler: Refactoring](https://martinfowler.com/books/refactoring.html): refactoring changes internal structure while preserving externally observable behavior, subject to the limits of available tests and observations.
-- Differential comparison and characterization testing are used as evidence of preserved behavior, with explicit limits for unobservable or environment-dependent behavior.
-- Label measured behavior as observations, causal explanations as hypotheses, and proposed transformations as recommendations; do not present one as another.
-- Confidence: high for incremental, boundary-based refactoring practice; medium for equivalence claims when coverage, consumers, or runtime environments are incomplete.
-- Freshness: review when interfaces, architecture, test strategy, or compatibility policy changes.
+- Small-step, test-supported transformations (C3, Principled): Fowler's methodology; practitioner-defined, not a controlled study.
+- Behavioral divergence under superficial equivalence (C1, Strong): PatchDiff found 29.6% of plausible patches behave differently from ground truth; strengthens the case for external verification.
+- Verification failure modes in successful runs (F1, Strong): tests passing is not proof of preserved contracts.
 
-For material conclusions, seek disconfirming evidence, distinguish observations from hypotheses and recommendations, record tradeoffs and uncertainty, and note confidence, freshness, and source independence.
+Source boundary: the claim "small steps plus regression checks preserve behavior" is Principled, strengthened inferentially by C1.
 
+Confidence: medium. Freshness: review when refactoring tooling, the research base, or language-level equivalence guarantees change.
+
+Disconfirmation: evidence that step size correlates with failure rates differently than assumed, or that automated equivalence checking makes manual small-stepping unnecessary, would update the procedure.
 ## Related skills and conflicts
 
 Related: `repository-change-verification`, `differential-patch-review`, `requirements-to-acceptance`, `regression-test-design`, `evidence-driven-debugging`, and `knowledge-maintenance`. This skill does not authorize breaking public behavior, deleting compatibility paths, or treating a refactor label as permission to skip review.

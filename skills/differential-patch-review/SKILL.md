@@ -51,17 +51,16 @@ Bad: Treat textual similarity or matching happy-path output as proof of equivale
 If no trusted comparison exists, narrow the claim to specification-based testing and label it accordingly. If the environment cannot run both versions, do not call the comparison validated. If versions legitimately differ under the contract, record the allowed difference rather than forcing textual convergence.
 
 ## Validation evidence and provenance
+Claims in this skill map to graded findings in [`docs/research.md`](../../docs/research.md):
 
-Record confidence and freshness for each review conclusion; distinguish observed behavior from hypotheses and recommendations, and do not treat copied reports as independent evidence.
+- Differential patch comparison exposes behavioral discrepancies (C1, Strong): Wang, Pradel & Liu (2025) built PatchDiff for exactly this purpose; 29.6% of plausible patches diverged from ground truth, and 46.8% of those from similar-but-divergent implementations.
+- Superficial checks miss real failures (F1, Strong): MAST found incorrect-verification failures even in successful runs.
 
-- [Wang, Pradel, and Liu, Are “Solved Issues” in SWE-bench Really Solved Correctly?](https://arxiv.org/abs/2503.15223): differential tests exposed behavioral discrepancies in plausible patches that passed benchmark validation.
-- [GitHub: About pull requests](https://docs.github.com/en/pull-requests/get-started/about-pull-requests): reviewable diffs, discussion, and checks form the change-validation boundary.
-- Label observed divergences separately from hypotheses about their cause and recommendations about acceptability; a difference is not automatically a defect.
+Source boundary: PatchDiff is evaluated on SWE-bench-style Python tasks; generalization to other domains is Inferential.
 
-Confidence: medium-high for the need; medium for generalization across languages and test environments. Freshness review: after material changes to evaluation methods.
+Confidence: high for the motivating evidence; medium for threshold and scope choices in this skill's procedure. Freshness: review when differential-testing research or the research base changes.
 
-For material conclusions, seek disconfirming evidence, distinguish observations from hypotheses and recommendations, record tradeoffs and uncertainty, and note confidence, freshness, and source independence.
-
+Disconfirmation: evidence that candidate-vs-trusted comparison adds no detection beyond standard test suites in ordinary repositories would narrow this skill to high-risk changes.
 ## Related skills and conflicts
 
 Related: `repository-change-verification`, `test-effectiveness-analysis`, `epistemic-coding`, and `dependency-security-audit`. This skill does not replace domain-specific oracle construction or human review.

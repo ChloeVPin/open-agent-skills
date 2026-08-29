@@ -49,17 +49,17 @@ Bad: Use the raw URL, exception text, or user identifier as a metric label and c
 If no operational question exists, do not add speculative telemetry. If signals are too noisy or expensive, reduce cardinality, sampling, volume, or retention while preserving the diagnostic question. If sensitive data has been emitted, follow incident and credential/data-handling procedures rather than merely masking future events. If telemetry changes behavior or timing, isolate the cause and revise the instrumentation boundary.
 
 ## Validation evidence and provenance
+Claims in this skill map to graded findings in [`docs/research.md`](../../docs/research.md):
 
-- The governing research emphasizes anomaly detection, unknown-unknown discovery, empirical failure analysis, SRE-inspired incident learning, and maintenance based on real-world change.
-- [OpenTelemetry documentation](https://opentelemetry.io/docs/concepts/observability-primer/): logs, metrics, and traces as complementary signals for understanding system behavior.
-- [OpenTelemetry Semantic Conventions](https://opentelemetry.io/docs/concepts/semantic-conventions/): stable names and attributes improve interoperability and analysis.
-- [Google SRE book: Monitoring Distributed Systems](https://sre.google/sre-book/monitoring-distributed-systems/): monitoring should support actionable operational questions and distinguish signal from noise.
-- Check whether telemetry conventions and observed signals are independently supported; multiple dashboards built from one instrument are not independent evidence.
-- Confidence: high for the question-first and signal-boundary principles; medium for thresholds, sampling, retention, and ownership because they depend on system risk and operations.
-- Freshness: review when telemetry standards, topology, privacy policy, cost limits, or operational failure modes change.
+- Telemetry data model and semantic conventions (Q7, Strong spec fact): OpenTelemetry standardizes signals and attribute naming.
+- Symptom-based alerting over cause-based heuristics (Q7, Moderate): Google SRE monitoring chapter; practitioner consensus.
+- Telemetry can capture sensitive payload data, requiring deliberate exclusion (S5, Moderate): NIST AI 600-1 risk enumeration extended to agent workflows.
 
-For material conclusions, seek disconfirming evidence, distinguish observations from hypotheses and recommendations, record tradeoffs and uncertainty, and note confidence, freshness, and source independence.
+Source boundary: the sources support the data model and alerting philosophy, not this skill's specific instrumentation choices.
 
+Confidence: high for the standardization facts; medium for any signal's usefulness until exercised against real incidents. Freshness: review when OpenTelemetry conventions, the research base, or privacy expectations change.
+
+Disconfirmation: evidence that cause-based alerting outperforms symptom-based alerting at comparable noise levels would require re-balancing the alerting guidance.
 ## Related skills and conflicts
 
 Related: `evidence-driven-debugging`, `secure-coding-review`, `requirements-to-acceptance`, `knowledge-maintenance`, `dependency-security-audit`, and `repository-change-verification`. This skill does not authorize logging sensitive data, treating telemetry as proof of correctness, or adding alerts without an actionable response.

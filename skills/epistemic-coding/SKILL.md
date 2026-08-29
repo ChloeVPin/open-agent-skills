@@ -48,18 +48,17 @@ Bad: “All tests pass, therefore the feature is correct.” Green tests are evi
 If the evidence is contradictory, preserve the competing explanations and use the smallest discriminating test or source check. If evidence is insufficient, narrow the claim and mark the decision uncertain. If verification cannot run, record the exact limitation and do not claim completion. If the requested change conflicts with repository instructions or a protected rule, surface the conflict before editing.
 
 ## Validation evidence and provenance
+Claims in this skill map to graded findings in [`docs/research.md`](../../docs/research.md):
 
-- Governing principles: truth over confidence, evidence over convention, verification over assertion, tradeoffs, simplicity, reversibility, and explicit disconfirmation.
-- [NIST AI Risk Management Framework](https://www.nist.gov/itl/ai-risk-management-framework): risk-management guidance emphasizes valid and reliable evaluation, transparency, and managing uncertainty across an AI system’s lifecycle.
-- Research basis: distinguish facts from advice, trace important claims to authoritative sources, review adversarially, validate with examples and counterexamples, and maintain skills when evidence changes.
-- Check source independence: trace repeated claims to their origin and do not count copied summaries as separate confirmation.
-- Quality standard: correctness, completeness, usefulness, robustness, maintainability, safety, and provenance.
-- Governing research report: an evidence-first agent must distinguish knowledge types, seek disconfirming evidence, preserve uncertainty, and measure substantive improvement rather than activity.
+- Distinguishing knowledge types and seeking disconfirming evidence (F4, Principled): the operationalized scientific method; not itself an evaluated intervention.
+- Motivating evidence — plausible-but-wrong agent output passing superficial checks (F1, Strong): Wang et al. 2025, MAST verification failure modes, mined real-world agent failures.
+- Uncertainty management alignment (NIST AI RMF): factual alignment with risk-management guidance, not an effectiveness study.
 
-Source independence is a required check for material claims: repeated summaries do not become independent evidence merely because they appear in different places.
+Source boundary: these sources are design input, not proof that this skill improves outcomes in a given repository (see `docs/evidence-standard.md` limits).
 
-Confidence: high for the governing principles; medium for any domain-specific conclusion reached while applying them. Freshness review: when the governing principles or source evidence changes.
+Confidence: high for the principles as stated; medium for any domain conclusion reached by applying them. Freshness: re-review when any cited finding in `docs/research.md` changes.
 
+Disconfirmation: a controlled study showing evidence-first procedures add no error reduction, or evidence that they slow correct work without preventing failure, would weaken this skill's guidance.
 ## Related skills and conflicts
 
 Related: `repository-change-verification`, `contradiction-resolution`, `test-effectiveness-analysis`, `differential-patch-review`, `dependency-security-audit`, and `knowledge-maintenance`. This skill does not authorize ignoring project instructions, skipping required verification, or weakening constitutional rules to finish faster.

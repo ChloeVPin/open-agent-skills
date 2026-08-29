@@ -53,16 +53,16 @@ Bad: Run a broad hard reset or recursive deletion to make the tree look clean wi
 If worktree ownership or scope is unclear, stop mutation and ask. If a destructive operation was started, preserve remaining state, inspect reflog/backups or platform recovery, and report the exact loss or uncertainty. If a push is rejected, inspect divergence and integrate deliberately rather than force-pushing. If a conflict cannot be resolved from evidence, preserve both versions and escalate the decision.
 
 ## Validation evidence and provenance
+Claims in this skill map to graded findings in [`docs/research.md`](../../docs/research.md):
 
-- The governing research prioritizes reversibility, explicit scope, failure recovery, change justification, and truth over confidence.
-- Git state inspection and diffs are direct repository observations; interpretations of ownership or intended history are hypotheses until confirmed; commit/revert strategy is a recommendation constrained by authorization.
-- [Git documentation: reset, restore, and revert](https://git-scm.com/docs/git-reset): distinguishes recovery and history-changing operations that have different safety and collaboration consequences.
-- Trace repository policy and upstream history to their origin; repeated commit messages or copied contribution instructions are not independent confirmation.
-- Confidence: high for inspect-before-mutate and explicit-target principles; medium for conflict and synchronization strategy because repository policy and collaboration model vary.
-- Freshness: review when remote policy, branching model, hosting workflow, or repository contribution rules change.
+- Recovery semantics (C6, Strong fact): `git reset` documentation defines exactly what moves and what reflog preserves.
+- Commit-before-destructive-action and revert-over-rewrite-on-shared-history (C6-built convention, Principled): design rules on top of documented mechanics.
 
-For material conclusions, seek disconfirming evidence, distinguish observations from hypotheses and recommendations, record tradeoffs and uncertainty, and note confidence, freshness, and source independence.
+Source boundary: vendor documentation describes tool behavior; it does not evaluate these workflow conventions.
 
+Confidence: high for the mechanics; the conventions are Principled. Freshness: review when Git's behavior or documentation changes.
+
+Disconfirmation: host tools or platforms whose recovery semantics contradict these rules would require platform-specific guidance rather than generic conventions.
 ## Related skills and conflicts
 
 Related: `repository-exploration`, `repository-change-verification`, `behavior-preserving-refactoring`, `requirements-to-acceptance`, `release-and-rollback-safety`, `prompt-injection-resistance`, and `skill-quality-review`. This skill does not authorize destroying user work, rewriting shared history, exposing secrets, or claiming a clean tree without checking it.

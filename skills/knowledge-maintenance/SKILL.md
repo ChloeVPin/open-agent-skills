@@ -52,18 +52,17 @@ Bad: Update the wording silently because the new version is assumed to be compat
 If freshness cannot be determined, label it unknown and keep the artifact below trusted status. If a source disappears, preserve the last evidence and seek an independent replacement. If evidence conflicts, do not average or silently choose; open a contradiction-resolution cycle. If a replacement is not equivalent, record the decision boundary rather than treating it as a drop-in successor.
 
 ## Validation evidence and provenance
+Claims in this skill map to graded findings in [`docs/research.md`](../../docs/research.md):
 
-Record confidence and freshness for retained knowledge, label observations, hypotheses, and recommendations separately, and trace corroboration to independent origins.
+- Standardized deprecation/sunset signaling (F5): RFC 9745 and RFC 8594 are IETF Standards Track — Strong that the mechanisms exist; RFC 9745 itself notes signals are hints, not guarantees.
+- Stale or misread context drives agent failure (F1, F2, Strong): MAST and FAROS failure clustering.
+- Generative-AI risk enumeration including stale-data risks (S5, Moderate): NIST AI 600-1.
 
-- [RFC 9745: Deprecation HTTP Response Header Field](https://www.rfc-editor.org/rfc/rfc9745.html): deprecation signaling and documentation/migration links.
-- [RFC 8594: Sunset HTTP Header Field](https://www.rfc-editor.org/info/rfc8594/): sunset signaling and its status as a hint rather than a guarantee.
-- [NIST AI RMF GenAI Profile](https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf): monitoring, incident tracking, and measurable continual improvement.
-- Label freshness measurements and source changes as observations, explanations of impact as hypotheses, and lifecycle actions as recommendations until evidence supports them.
+Source boundary: mirroring HTTP lifecycle semantics in a skill library is an Inferential design choice, not proven staleness prevention.
 
-Confidence: medium-high for lifecycle principles; medium for default review windows, which are domain- and risk-dependent.
+Confidence: high for the mechanism facts; medium for freshness triggers as sufficient conditions. Freshness: review when RFC status, the research base, or documented agent-context behavior changes.
 
-For material conclusions, seek disconfirming evidence, distinguish observations from hypotheses and recommendations, record tradeoffs and uncertainty, and note confidence, freshness, and source independence.
-
+Disconfirmation: evidence that dated skills mislead no more often than fresh ones, or a better lifecycle model, would supersede this one.
 ## Related skills and conflicts
 
 Related: `dependency-security-audit`, `differential-patch-review`, `contradiction-resolution`, and `skill-quality-review`. This skill does not authorize silent deletion or override a source owner's deprecation policy.

@@ -48,16 +48,17 @@ Bad: Continue implementing the original plan because changing direction would ma
 If acceptance criteria are unstable, pause planning and clarify them. If dependencies or callers are unknown, add bounded discovery rather than guessing. If a step cannot be verified, narrow its claim or obtain the required environment/approval. If the plan grows with speculative branches, return to the stated outcome and remove steps that do not reduce a demonstrated risk or satisfy a criterion.
 
 ## Validation evidence and provenance
+Claims in this skill map to graded findings in [`docs/research.md`](../../docs/research.md):
 
-- The governing research emphasizes reconnaissance, prioritization, simplicity, reversibility, explicit dependencies, falsifiable questions, and meaningful progress over busyness.
-- [Google SRE: Release Engineering](https://sre.google/sre-book/release-engineering/): repeatable, automated, and staged delivery practices reduce release risk while preserving evidence about what changed.
-- Plan observations are repository or experiment evidence; causal explanations are hypotheses; sequencing and implementation choices are recommendations that must be revised when evidence changes.
-- Trace dependency and architecture claims to their originating code, specifications, or owners; repeated planning assumptions are not independent confirmation.
-- Confidence: high for bounded decomposition and evidence-driven sequencing; medium for a plan’s predicted effort and risk until discovery and experiments run.
-- Freshness: replan when requirements, repository structure, dependencies, risk, environment, or verification results change.
+- Explicit success definition before acting (F2, Strong): instruction misreading is the largest documented agent failure cluster (FAROS); plans restating observable outcomes counteract it.
+- Staged execution with checkpoints (Q10, Moderate): mirrors release-engineering practice where staged change limits incident blast radius.
+- Keeping plans selective and current (F3, Moderate): context quality beats volume.
 
-For material conclusions, seek disconfirming evidence, distinguish observations from hypotheses and recommendations, record tradeoffs and uncertainty, and note confidence, freshness, and source independence.
+Source boundary: planning-granularity choices are design decisions informed by these findings, not evaluated interventions.
 
+Confidence: medium. Freshness: review when the cited findings or agent-planning evidence change.
+
+Disconfirmation: evidence that plan overhead reduces task completion rates without improving correctness would require narrowing the procedure to high-risk changes only.
 ## Related skills and conflicts
 
 Related: `requirements-to-acceptance`, `repository-exploration`, `skill-composition-and-routing`, `epistemic-coding`, `repository-change-verification`, `safe-git-workflow`, and `skill-quality-review`. This skill does not authorize scope expansion, irreversible actions without approval, or claiming completion because a plan was written.

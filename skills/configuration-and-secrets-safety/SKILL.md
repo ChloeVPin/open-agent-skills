@@ -50,16 +50,16 @@ Bad: Add a boolean flag with a permissive default and no plan to remove or revie
 If configuration precedence or secret ownership is unclear, stop and resolve it before changing behavior. If a secret may be exposed, revoke/rotate it through the responsible process, preserve evidence, and inspect copies and logs; deleting the visible file is not sufficient. If a provider is unavailable, use an explicitly safe fallback or fail closed according to the contract, not an improvised credential. If environments drift, reconcile from an authorized source and verify before release.
 
 ## Validation evidence and provenance
+Claims in this skill map to graded findings in [`docs/research.md`](../../docs/research.md):
 
-- The governing research emphasizes explicit uncertainty, reversibility, failure recovery, least-privilege tool use, lifecycle maintenance, and evidence over convention.
-- [OWASP Secrets Management Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Secrets_Management_Cheat_Sheet.html): centralized management, least privilege, rotation, revocation, attribution, and avoiding secret leakage in code and pipelines.
-- [OWASP CI/CD Security Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/CI_CD_Security_Cheat_Sheet.html): secrets should not be hardcoded in repositories or CI/CD configuration and pipeline exposure must be controlled.
-- Label observed configuration behavior separately from hypotheses about provider or environment effects and recommendations about defaults or rotation; trace repeated guidance to independent sources.
-- Confidence: high for secret lifecycle and explicit configuration-contract principles; medium for provider-specific implementation and safe fallback until the environment is known.
-- Freshness: review when secret providers, deployment environments, configuration precedence, rotation policy, or CI/CD tooling changes.
+- Recurring secret-leak channels — env vars, logs, CI configuration, artifacts (S3, Moderate): OWASP Secrets Management and CI/CD Security cheat sheets; convergent incident experience.
+- No claim that any specific vault product prevents leaks (S3 boundary, Moderate): tool choice is repository-specific.
 
-For material conclusions, seek disconfirming evidence, distinguish observations from hypotheses and recommendations, record tradeoffs and uncertainty, and note confidence, freshness, and source independence.
+Source boundary: cheat sheets document recurring channels; they do not evaluate this skill's specific handling steps.
 
+Confidence: medium. Freshness: review when the OWASP cheat sheets, secret-management tooling, or the research base change.
+
+Disconfirmation: a documented leak class absent from the procedure would be added; evidence that a channel is no longer exploitable would remove the corresponding rule.
 ## Related skills and conflicts
 
 Related: `secure-coding-review`, `privacy-and-data-handling`, `tool-authorization-audit`, `prompt-injection-resistance`, `release-and-rollback-safety`, `api-contract-compatibility`, and `repository-change-verification`. This skill does not authorize handling real secrets in chat, weakening access controls, or assuming a private repository makes a credential safe.

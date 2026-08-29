@@ -50,13 +50,17 @@ Bad: “Use the standard migration pattern.” A convention is not evidence that
 If the request has materially different interpretations, pause and ask instead of silently selecting one. If clarification is unavailable, narrow the implementation to the explicitly supported behavior and record the unresolved choice. If existing behavior conflicts with the request, surface the conflict before changing compatibility. If acceptance cannot be observed or verified, label the criterion provisional rather than claiming completion.
 
 ## Validation evidence and provenance
+Claims in this skill map to graded findings in [`docs/research.md`](../../docs/research.md):
 
-- The governing research requires explicit scope, decision criteria, tradeoffs, examples, counterexamples, uncertainty, adversarial review, and verification before skill or code creation.
-- [RFC 2119](https://www.rfc-editor.org/rfc/rfc2119): standardized requirement terms help distinguish obligations, permissions, and optional guidance when converting intent into acceptance criteria.
-- This skill applies falsifiability and anti-bias practice to requirements: competing interpretations are made explicit and disconfirming evidence is sought before implementation.
-- Confidence: high for the clarification workflow; medium for domain-specific criteria, which require domain evidence.
-- Freshness: review when repository interfaces, product constraints, or requirements practices materially change.
+- MUST/SHOULD/MAY keyword semantics (F7): RFC 2119 is the authoritative definition — Strong as a mechanism fact.
+- Ambiguous instructions are a top agent failure mode (F2, Strong): FAROS found instruction misreading in the largest failure cluster; stronger models failed more articulately.
+- Acceptance criteria as observable outcomes: Principled methodology built on those facts.
 
+Source boundary: no controlled study shows acceptance-criteria-first work prevents incorrect deliveries; the claim is design inference from F2.
+
+Confidence: high for the keyword semantics; medium for the procedure's effectiveness. Freshness: review when requirement standards or agent instruction-following evidence changes.
+
+Disconfirmation: evidence that detailed acceptance criteria increase over-literal implementation without reducing incorrect deliveries would require rebalancing the procedure.
 ## Related skills and conflicts
 
 Related: `epistemic-coding`, `repository-change-verification`, `evidence-driven-debugging`, `differential-patch-review`, `test-effectiveness-analysis`, and `contradiction-resolution`. This skill does not authorize inventing requirements to avoid asking a necessary question or treating a complete checklist as proof that the implementation is correct.

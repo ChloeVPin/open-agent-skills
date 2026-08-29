@@ -49,16 +49,17 @@ Bad: Call an artifact reproducible because the same command passed twice on one 
 If workflow permissions, runner trust, or artifact ownership is unclear, stop privileged publication and resolve the boundary. If a secret may have reached logs, artifacts, or an untrusted job, revoke/rotate it and follow the security process. If an artifact lacks trustworthy provenance, mark it unverified and rebuild or attest it through an approved path. If a required check can be bypassed or produces false confidence, fix the gate before relying on it.
 
 ## Validation evidence and provenance
+Claims in this skill map to graded findings in [`docs/research.md`](../../docs/research.md):
 
-- The governing research emphasizes source hierarchy, failure analysis, reproducibility, supply-chain integrity, tool authorization, and verification over assertion.
-- [GitHub Actions secure use reference](https://docs.github.com/en/actions/reference/security/secure-use): immutable action references and workflow permission controls reduce tampering and privilege risk.
-- [SLSA build levels](https://slsa.dev/spec/v1.0/levels): build provenance and increasing protections against artifact or build-process tampering.
-- Label observed workflow behavior and artifact measurements separately from hypotheses about trust or reproducibility and recommendations about controls; trace repeated guidance to independent sources.
-- Confidence: high for explicit inputs, least privilege, artifact identity, and provenance principles; medium for a particular provider or reproducibility guarantee until its runner and build model are verified.
-- Freshness: review when CI provider behavior, runner images, workflow permissions, build tools, dependency policy, artifact consumers, or provenance standards change.
+- Documented supply-chain attack classes and provenance levels (S4, Strong for incident classes): SLSA v1.0 levels address enumerated attack patterns.
+- Platform-specific hardening facts (S4, Strong vendor facts): GitHub Actions secure-use documentation for the dominant CI platform.
+- Defense effectiveness (S4, Moderate): hardening reduces documented attack surface; measured effectiveness of specific controls is limited.
 
-For material conclusions, seek disconfirming evidence, distinguish observations from hypotheses and recommendations, record tradeoffs and uncertainty, and note confidence, freshness, and source independence.
+Source boundary: vendor guidance describes mechanisms; it does not certify a workflow as safe.
 
+Confidence: high for the mechanism facts; medium for sufficiency of any hardening set. Freshness: review when SLSA versions, CI platform guidance, or the research base change.
+
+Disconfirmation: a supply-chain compromise class not addressed by SLSA levels or the hardening steps would require extending the procedure.
 ## Related skills and conflicts
 
 Related: `dependency-security-audit`, `configuration-and-secrets-safety`, `release-and-rollback-safety`, `safe-git-workflow`, `secure-coding-review`, `performance-regression-analysis`, and `repository-change-verification`. This skill does not authorize privileged workflow changes, exposing secrets, trusting mutable actions, or calling an artifact verified without provenance evidence.
