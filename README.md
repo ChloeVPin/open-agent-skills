@@ -18,17 +18,27 @@ The goal is useful skills: clear triggers, bounded procedures, failure handling,
 ## Operating model
 
 1. Identify a concrete coding-agent task and its failure modes.
-2. Research authoritative sources and separate facts from advice.
-3. Write one focused `SKILL.md` with explicit scope and triggers.
+2. Research authoritative sources, grade the evidence, and separate facts from advice.
+3. Write one focused `SKILL.md` with explicit scope, triggers, and provenance.
 4. Review it adversarially with counterexamples and disconfirming evidence.
 5. Validate usefulness, correctness, safety, and maintainability.
 6. Revise, deprecate, or replace skills when evidence changes.
 
 The deliverables are the directories under [`skills/`](skills/). Each contains a standalone `SKILL.md`; no runtime, test suite, or audit framework is required.
 
+## Evidence base
+
+Every material claim in a skill is graded and traceable to the central research base:
+
+- [`docs/evidence-standard.md`](docs/evidence-standard.md) — the evidence grades (Strong / Moderate / Inferential / Principled), citation rules, source hierarchy, and lifecycle-promotion criteria every skill must pass.
+- [`docs/research.md`](docs/research.md) — the graded findings (F*, C*, Q*, S*) each skill's provenance section cites, plus an explicit list of what the evidence does **not** cover.
+- [`docs/skill-audit.md`](docs/skill-audit.md) — the per-skill evidence review decisions across all 35 skills.
+
+A skill is not more credible because it sounds confident. Where the best available evidence is a practitioner reference rather than a controlled study, the skill says so.
+
 ## Release status
 
-`v0.1.0-draft` is the first public baseline: 35 standalone skills organized by task path. Every skill remains marked `Lifecycle: draft`, so this release does not claim universal correctness or production validation. Inspect each skill’s scope and sources, then verify its advice against the repository and task where you use it.
+`v0.1.0-draft` is the first public baseline: 35 standalone skills organized by task path. Every skill remains marked `Lifecycle: draft`, so this release does not claim universal correctness or production validation. Inspect each skill’s scope, sources, and evidence grade, then verify its advice against the repository and task where you use it.
 
 Install the baseline with:
 
