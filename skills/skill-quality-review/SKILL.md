@@ -20,6 +20,7 @@ Trigger before publishing a new skill, promoting its lifecycle, revising a trust
 - The skill must solve a concrete, recurring coding-agent problem with a scope narrow enough to apply reliably.
 - Its trigger must distinguish when it applies from neighboring skills; its procedure must be actionable without hiding important decisions.
 - Claims, confidence, and lifecycle must not exceed the evidence. A polished document is not validation.
+- Every material claim must be graded (Strong / Moderate / Inferential / Principled) and traceable to a finding in [`docs/research.md`](../../docs/research.md) via the provenance section.
 - A skill should add depth, coverage, or a safer composition—not merely rename existing guidance or increase file count.
 
 ## Procedure
@@ -27,7 +28,7 @@ Trigger before publishing a new skill, promoting its lifecycle, revising a trust
 1. Identify the task, user benefit, failure mode, and expected output. State why an existing skill cannot cover it without unacceptable ambiguity or overload.
 2. Inspect frontmatter name/description, purpose, triggers, prerequisites, decision criteria, procedure, examples, counterexamples, failure recovery, provenance, confidence, freshness, lifecycle, related skills, and conflicts. Confirm the name matches its directory, the file is a standalone `SKILL.md`, and no application code, runtime, test suite, or audit machinery is bundled.
 3. Test trigger precision with positive, negative, and neighboring-task examples. Check whether an agent could know when to activate, defer, or stop the skill.
-4. Trace material claims to authoritative sources, experiments, or observed failures. Check source independence, publication/version context, assumptions, and whether recommendations are being presented as facts.
+4. Trace material claims to authoritative sources, experiments, or observed failures. Check source independence, publication/version context, assumptions, and whether recommendations are being presented as facts. Verify each material claim carries a grade and maps to a defined finding ID in [`docs/research.md`](../../docs/research.md); reject anonymous attributions such as "the governing research" and grade-less appeals to unspecified authority.
 5. Seek disconfirming evidence: strongest counterargument, plausible misuse, boundary input, conflicting guidance, outdated source, hidden consumer, and scenario where the procedure creates harm or busywork.
 6. Inspect the procedure for missing decision boundaries, permissions, side effects, failure recovery, uncertainty, and verification evidence. Check that examples demonstrate behavior rather than slogans.
 7. Compare the candidate with existing skills. Classify the relationship as complementary, composable, overlapping, contradictory, or replacement; define routing and handoff if it remains. Confirm the candidate is linked from the repository index and every related-skill reference resolves to an existing skill or is explicitly marked as an external dependency.
