@@ -30,15 +30,15 @@ The deliverables are the directories under [`skills/`](skills/). Each contains a
 
 Every material claim in a skill is graded and traceable to the central research base:
 
-- [`docs/evidence-standard.md`](docs/evidence-standard.md) — the evidence grades (Strong / Moderate / Inferential / Principled), citation rules, source hierarchy, and lifecycle-promotion criteria every skill must pass.
-- [`docs/research.md`](docs/research.md) — the graded findings (F*, C*, Q*, S*) each skill's provenance section cites, plus an explicit list of what the evidence does **not** cover.
-- [`docs/skill-audit.md`](docs/skill-audit.md) — the per-skill evidence review decisions across all 35 skills.
+- [`docs/evidence-standard.md`](docs/evidence-standard.md): the evidence grades (Strong / Moderate / Inferential / Principled), citation rules, source hierarchy, and lifecycle-promotion criteria every skill must pass.
+- [`docs/research.md`](docs/research.md): the graded findings (F*, C*, Q*, S*) each skill's provenance section cites, plus an explicit list of what the evidence does **not** cover.
+- [`docs/skill-audit.md`](docs/skill-audit.md): the per-skill evidence review decisions across all 35 skills.
 
 A skill is not more credible because it sounds confident. Where the best available evidence is a practitioner reference rather than a controlled study, the skill says so.
 
 ## Release status
 
-`v0.2.0-draft` is the evidence-reviewed baseline: 35 standalone skills organized by task path, every one with a graded, traceable provenance section (claim → finding → evidence grade → source) backed by [`docs/research.md`](docs/research.md). All skills remain `Lifecycle: draft` — promotion requires representative real-task evidence per the evidence standard, which none has yet. This release does not claim universal correctness or production validation. Inspect each skill’s scope, sources, and evidence grade, then verify its advice against the repository and task where you use it.
+`v0.2.0-draft` is the evidence-reviewed baseline: 35 standalone skills organized by task path, every one with a graded, traceable provenance section (claim → finding → evidence grade → source) backed by [`docs/research.md`](docs/research.md). All skills remain `Lifecycle: draft`; promotion requires representative real-task evidence per the evidence standard, which none has yet. This release does not claim universal correctness or production validation. Inspect each skill’s scope, sources, and evidence grade, then verify its advice against the repository and task where you use it.
 
 Install the baseline with:
 
@@ -109,7 +109,7 @@ npx skills add ChloeVPin/open-agent-skills \\
   --skill repository-change-verification
 ```
 
-Use only the domain skill required by the change—for example, `data-migration-safety`, `concurrency-and-shared-state`, or `internationalization-and-localization`. If the request has two materially different interpretations, clarify it before implementation.
+Use only the domain skill required by the change, for example, `data-migration-safety`, `concurrency-and-shared-state`, or `internationalization-and-localization`. If the request has two materially different interpretations, clarify it before implementation.
 
 ### Change security-sensitive behavior
 
@@ -173,47 +173,47 @@ Skills are guidance, not guarantees. Repository instructions, user authorization
 
 ### Foundation and routing
 
-- [Epistemic coding](skills/epistemic-coding/SKILL.md) — evidence-first decisions and uncertainty.
-- [Requirements to acceptance](skills/requirements-to-acceptance/SKILL.md) — turn intent into observable criteria.
-- [Skill composition and routing](skills/skill-composition-and-routing/SKILL.md) — select and order applicable skills.
-- [Repository exploration](skills/repository-exploration/SKILL.md) — map code, callers, boundaries, and verification paths.
-- [Skill quality review](skills/skill-quality-review/SKILL.md) — assess evidence, scope, overlap, and lifecycle before publication.
-- [Implementation planning](skills/implementation-planning/SKILL.md) — sequence bounded work with risks and verification.
-- [Architecture decision-making](skills/architecture-decision-making/SKILL.md) — compare system designs and record tradeoffs.
+- [Epistemic coding](skills/epistemic-coding/SKILL.md): evidence-first decisions and uncertainty.
+- [Requirements to acceptance](skills/requirements-to-acceptance/SKILL.md): turn intent into observable criteria.
+- [Skill composition and routing](skills/skill-composition-and-routing/SKILL.md): select and order applicable skills.
+- [Repository exploration](skills/repository-exploration/SKILL.md): map code, callers, boundaries, and verification paths.
+- [Skill quality review](skills/skill-quality-review/SKILL.md): assess evidence, scope, overlap, and lifecycle before publication.
+- [Implementation planning](skills/implementation-planning/SKILL.md): sequence bounded work with risks and verification.
+- [Architecture decision-making](skills/architecture-decision-making/SKILL.md): compare system designs and record tradeoffs.
 
 ### Change and diagnosis
 
-- [Evidence-driven debugging](skills/evidence-driven-debugging/SKILL.md) — reproduce failures and test competing causes.
-- [Behavior-preserving refactoring](skills/behavior-preserving-refactoring/SKILL.md) — restructure without accidental contract changes.
-- [Dead code and comment cleanup](skills/dead-code-and-comment-cleanup/SKILL.md) — remove proven dead code and redundant comments without losing intent or public behavior.
-- [API contract and compatibility](skills/api-contract-compatibility/SKILL.md) — evolve interfaces without hidden consumer breakage.
-- [Differential patch review](skills/differential-patch-review/SKILL.md) — compare candidate and trusted behavior.
-- [Repository change verification](skills/repository-change-verification/SKILL.md) — assess a complete patch before acceptance.
-- [Safe Git workflow](skills/safe-git-workflow/SKILL.md) — preserve work and history while changing repositories.
+- [Evidence-driven debugging](skills/evidence-driven-debugging/SKILL.md): reproduce failures and test competing causes.
+- [Behavior-preserving refactoring](skills/behavior-preserving-refactoring/SKILL.md): restructure without accidental contract changes.
+- [Dead code and comment cleanup](skills/dead-code-and-comment-cleanup/SKILL.md): remove proven dead code and redundant comments without losing intent or public behavior.
+- [API contract and compatibility](skills/api-contract-compatibility/SKILL.md): evolve interfaces without hidden consumer breakage.
+- [Differential patch review](skills/differential-patch-review/SKILL.md): compare candidate and trusted behavior.
+- [Repository change verification](skills/repository-change-verification/SKILL.md): assess a complete patch before acceptance.
+- [Safe Git workflow](skills/safe-git-workflow/SKILL.md): preserve work and history while changing repositories.
 
 ### Testing and performance
 
-- [Regression test design](skills/regression-test-design/SKILL.md) — create focused behavior and boundary tests.
-- [Test-effectiveness analysis](skills/test-effectiveness-analysis/SKILL.md) — find faults that tests fail to detect.
-- [Static analysis and type safety](skills/static-analysis-and-type-safety/SKILL.md) — interpret diagnostics without hiding risk.
-- [Concurrency and shared state](skills/concurrency-and-shared-state/SKILL.md) — reason about interleavings, ownership, and liveness.
-- [Resilience and retry design](skills/resilience-and-retry-design/SKILL.md) — bound dependency failures and recovery behavior.
-- [Performance regression analysis](skills/performance-regression-analysis/SKILL.md) — measure changes against representative workloads.
-- [Agent evaluation and benchmarking](skills/agent-evaluation-and-benchmarking/SKILL.md) — measure agent capability without metric gaming.
-- [Observability and instrumentation](skills/observability-and-instrumentation/SKILL.md) — add useful, safe diagnostic signals.
-- [Accessibility review](skills/accessibility-review/SKILL.md) — check user tasks across input modes and assistive technology.
-- [Internationalization and localization](skills/internationalization-and-localization/SKILL.md) — handle locales, scripts, formats, and translations safely.
-- [Release and rollback safety](skills/release-and-rollback-safety/SKILL.md) — stage delivery and recover safely.
-- [Data migration safety](skills/data-migration-safety/SKILL.md) — evolve persisted data with integrity and recovery boundaries.
+- [Regression test design](skills/regression-test-design/SKILL.md): create focused behavior and boundary tests.
+- [Test-effectiveness analysis](skills/test-effectiveness-analysis/SKILL.md): find faults that tests fail to detect.
+- [Static analysis and type safety](skills/static-analysis-and-type-safety/SKILL.md): interpret diagnostics without hiding risk.
+- [Concurrency and shared state](skills/concurrency-and-shared-state/SKILL.md): reason about interleavings, ownership, and liveness.
+- [Resilience and retry design](skills/resilience-and-retry-design/SKILL.md): bound dependency failures and recovery behavior.
+- [Performance regression analysis](skills/performance-regression-analysis/SKILL.md): measure changes against representative workloads.
+- [Agent evaluation and benchmarking](skills/agent-evaluation-and-benchmarking/SKILL.md): measure agent capability without metric gaming.
+- [Observability and instrumentation](skills/observability-and-instrumentation/SKILL.md): add useful, safe diagnostic signals.
+- [Accessibility review](skills/accessibility-review/SKILL.md): check user tasks across input modes and assistive technology.
+- [Internationalization and localization](skills/internationalization-and-localization/SKILL.md): handle locales, scripts, formats, and translations safely.
+- [Release and rollback safety](skills/release-and-rollback-safety/SKILL.md): stage delivery and recover safely.
+- [Data migration safety](skills/data-migration-safety/SKILL.md): evolve persisted data with integrity and recovery boundaries.
 
 ### Security and maintenance
 
-- [Secure coding review](skills/secure-coding-review/SKILL.md) — inspect application trust boundaries and abuse cases.
-- [Privacy and data handling](skills/privacy-and-data-handling/SKILL.md) — minimize and govern sensitive data across its lifecycle.
-- [Configuration and secrets safety](skills/configuration-and-secrets-safety/SKILL.md) — manage environment settings and credentials safely.
-- [Build and CI integrity](skills/build-and-ci-integrity/SKILL.md) — protect workflows, artifacts, and build provenance.
-- [Dependency security audit](skills/dependency-security-audit/SKILL.md) — review dependency and supply-chain changes.
-- [Tool authorization audit](skills/tool-authorization-audit/SKILL.md) — review agent permissions and high-impact calls.
-- [Prompt-injection resistance](skills/prompt-injection-resistance/SKILL.md) — separate untrusted content from authority and actions.
-- [Contradiction resolution](skills/contradiction-resolution/SKILL.md) — handle conflicting evidence and failures.
-- [Knowledge maintenance](skills/knowledge-maintenance/SKILL.md) — track freshness, deprecation, and supersession.
+- [Secure coding review](skills/secure-coding-review/SKILL.md): inspect application trust boundaries and abuse cases.
+- [Privacy and data handling](skills/privacy-and-data-handling/SKILL.md): minimize and govern sensitive data across its lifecycle.
+- [Configuration and secrets safety](skills/configuration-and-secrets-safety/SKILL.md): manage environment settings and credentials safely.
+- [Build and CI integrity](skills/build-and-ci-integrity/SKILL.md): protect workflows, artifacts, and build provenance.
+- [Dependency security audit](skills/dependency-security-audit/SKILL.md): review dependency and supply-chain changes.
+- [Tool authorization audit](skills/tool-authorization-audit/SKILL.md): review agent permissions and high-impact calls.
+- [Prompt-injection resistance](skills/prompt-injection-resistance/SKILL.md): separate untrusted content from authority and actions.
+- [Contradiction resolution](skills/contradiction-resolution/SKILL.md): handle conflicting evidence and failures.
+- [Knowledge maintenance](skills/knowledge-maintenance/SKILL.md): track freshness, deprecation, and supersession.

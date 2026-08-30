@@ -18,7 +18,7 @@ Trigger when changing CI workflows, build scripts, runners, containers, caches, 
 ## Decision criteria
 
 - A green workflow is evidence only for the jobs, inputs, environment, and assertions it actually exercised.
-- Build integrity includes source identity, dependency identity, toolchain, configuration, runner, artifact digest, and provenance—not merely a successful command.
+- Build integrity includes source identity, dependency identity, toolchain, configuration, runner, artifact digest, and provenance, not merely a successful command.
 - CI permissions and secrets must be limited to the job and event that require them; untrusted contributions must not gain write access through workflow context.
 - Reproducibility is a goal with measurable limits: record nondeterministic inputs and distinguish bit-for-bit reproducibility from functional equivalence.
 

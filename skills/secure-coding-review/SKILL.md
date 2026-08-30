@@ -20,7 +20,7 @@ Trigger when a change handles untrusted input, identity, authorization, secrets,
 - Treat every external input, persisted value, dependency output, and model/tool output as untrusted until the code establishes the required property.
 - Authentication identifies a principal; authorization independently checks whether that principal may perform the specific action on the specific resource.
 - A control is credible only when its enforcement point, failure behavior, and bypass paths are understood.
-- Severity depends on impact, exploitability, reachability, affected data, and exposure—not on a generic checklist score.
+- Severity depends on impact, exploitability, reachability, affected data, and exposure, not on a generic checklist score.
 
 ## Procedure
 
@@ -55,7 +55,7 @@ If the trust boundary or deployment context is unknown, narrow the review and es
 ## Validation evidence and provenance
 Claims in this skill map to graded findings in [`docs/research.md`](../../docs/research.md):
 
-- Prevalence ranking of application-security risks (S1, Moderate): OWASP Top 10 aggregates industry incident data — an aggregation, not a controlled study.
+- Prevalence ranking of application-security risks (S1, Moderate): OWASP Top 10 aggregates industry incident data; it is an aggregation, not a controlled study.
 - Defect taxonomy (S1, Strong fact): CWE classification; OWASP Secure Coding Practices as the checkable checklist.
 - Trust-boundary and abuse-case review improving recall (S1, Principled): methodology claim, not measured.
 

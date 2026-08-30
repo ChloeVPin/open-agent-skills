@@ -57,7 +57,7 @@ If instruction and data boundaries are unclear, stop the action and ask or narro
 Claims in this skill map to graded findings in [`docs/research.md`](../../docs/research.md):
 
 - Indirect prompt injection is a demonstrated, empirical threat (S7, Strong): Greshake et al. (DIMVA 2023) compromised real LLM-integrated applications; OWASP lists injection as LLM01.
-- No complete defense exists (S7 boundary): stated explicitly; the skill's controls — content/action separation, least privilege, human confirmation — are Principled mitigations with residual risk.
+- No complete defense exists (S7 boundary): stated explicitly; the skill's controls (content/action separation, least privilege, human confirmation) are Principled mitigations with residual risk.
 - Prevention checklist (S7, Principled): OWASP prevention cheat sheet guidance.
 
 Source boundary: demonstrated attacks establish the threat; they do not validate these mitigations against adaptive adversaries.

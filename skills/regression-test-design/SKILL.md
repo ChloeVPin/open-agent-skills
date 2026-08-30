@@ -53,7 +53,7 @@ If the contract is unclear, use `requirements-to-acceptance` before writing the 
 Claims in this skill map to graded findings in [`docs/research.md`](../../docs/research.md):
 
 - Mutants are coupled with real faults (Q1, Strong): 15-million-mutant longitudinal analysis (Petrović et al., ICSE 2021) found mutation testing flags live mutants that would have prevented real bugs.
-- Mutation-augmented test writing raises coverage and detection (Q2, Moderate): one controlled experiment with stated limits (22 students, 8 groups) — reported honestly as Moderate.
+- Mutation-augmented test writing raises coverage and detection (Q2, Moderate): one controlled experiment with stated limits (22 students, 8 groups), reported honestly as Moderate.
 
 Source boundary: the sources support mutation-informed test design, not this skill's specific boundary-selection steps.
 

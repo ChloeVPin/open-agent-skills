@@ -52,7 +52,7 @@ If the request has materially different interpretations, pause and ask instead o
 ## Validation evidence and provenance
 Claims in this skill map to graded findings in [`docs/research.md`](../../docs/research.md):
 
-- MUST/SHOULD/MAY keyword semantics (F7): RFC 2119 is the authoritative definition — Strong as a mechanism fact.
+- MUST/SHOULD/MAY keyword semantics (F7): RFC 2119 is the authoritative definition; this is Strong as a mechanism fact.
 - Ambiguous instructions are a top agent failure mode (F2, Strong): FAROS found instruction misreading in the largest failure cluster; stronger models failed more articulately.
 - Acceptance criteria as observable outcomes: Principled methodology built on those facts.
 

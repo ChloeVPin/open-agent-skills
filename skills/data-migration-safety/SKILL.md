@@ -17,7 +17,7 @@ Trigger when adding, removing, renaming, transforming, backfilling, partitioning
 
 ## Decision criteria
 
-- “Migration succeeded” requires completeness, correctness, compatibility, and an observable integrity check—not merely a successful command.
+- “Migration succeeded” requires completeness, correctness, compatibility, and an observable integrity check, not merely a successful command.
 - Prefer additive expand/migrate/contract steps when old and new application versions can overlap.
 - A rollback of code does not undo a destructive or semantic data change; distinguish rollback, forward recovery, restore, and reconciliation.
 - Idempotence, resumability, bounded batches, and checkpointing reduce operational risk but do not prove transformation correctness.

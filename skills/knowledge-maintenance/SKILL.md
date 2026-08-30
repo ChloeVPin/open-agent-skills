@@ -54,7 +54,7 @@ If freshness cannot be determined, label it unknown and keep the artifact below 
 ## Validation evidence and provenance
 Claims in this skill map to graded findings in [`docs/research.md`](../../docs/research.md):
 
-- Standardized deprecation/sunset signaling (F5): RFC 9745 and RFC 8594 are IETF Standards Track — Strong that the mechanisms exist; RFC 9745 itself notes signals are hints, not guarantees.
+- Standardized deprecation/sunset signaling (F5): RFC 9745 and RFC 8594 are IETF Standards Track (Strong that the mechanisms exist); RFC 9745 itself notes signals are hints, not guarantees.
 - Stale or misread context drives agent failure (F1, F2, Strong): MAST and FAROS failure clustering.
 - Generative-AI risk enumeration including stale-data risks (S5, Moderate): NIST AI 600-1.
 

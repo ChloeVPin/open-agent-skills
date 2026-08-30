@@ -57,7 +57,7 @@ Claims in this skill map to graded findings in [`docs/research.md`](../../docs/r
 
 Source boundary: frameworks enumerate risk and structure; they do not certify any implementation as compliant with law or policy.
 
-Confidence: medium for the risk structure; medium-low for completeness in any jurisdiction — legal review stays outside this skill's scope. Freshness: review when NIST publications, regulation, or the research base change.
+Confidence: medium for the risk structure; medium-low for completeness in any jurisdiction; legal review stays outside this skill's scope. Freshness: review when NIST publications, regulation, or the research base change.
 
 Disconfirmation: a materially different authoritative privacy structure, or evidence that lifecycle controls miss a recurring leak class, would require revision.
 ## Related skills and conflicts

@@ -29,7 +29,7 @@ All 35 skills were `Lifecycle: draft` with the same 9-section anatomy at audit t
 | resilience-and-retry-design | SRE overload, cascading failures | Q5 | Map bounded-retry rules to Q5; keep at Moderate | revised |
 | performance-regression-analysis | SRE SLOs | Q6 | Map to Q6; baseline/workload methodology Principled on top | revised |
 | observability-and-instrumentation | OTel primer/conventions, SRE monitoring | Q7, S5 | Spec facts (Strong) vs symptom-based alerting practice (Moderate); add privacy exclusion rule (S5) | revised |
-| accessibility-review | WCAG, WAI, ARIA APG | Q8 | Checkable criteria (Strong) vs checklist limits (Moderate) — require task-based review | revised |
+| accessibility-review | WCAG, WAI, ARIA APG | Q8 | Checkable criteria (Strong) vs checklist limits (Moderate); require task-based review | revised |
 | internationalization-and-localization | TR35, CLDR | Q9 | CLDR data authority (Strong); hand-rolled-rules failure claim Inferential | revised |
 | release-and-rollback-safety | SRE release eng, incidents, DORA | Q10, C2 | Map staged rollout to Q10 (Moderate, survey limits noted); incident discipline C2 | revised |
 | data-migration-safety | Fowler evodb, SRE data integrity, PG docs | Q11 | Lock/rewrite facts Strong; expand/contract procedure Principled | revised |
@@ -48,7 +48,7 @@ All 35 skills were `Lifecycle: draft` with the same 9-section anatomy at audit t
 ## Audit conclusions
 
 - **35 graded findings back the whole library** (F1–F8, C1–C6, Q1–Q12, S1–S9) after deduplication; several skills shared anonymous variants of the same claims, which is now explicit.
-- **New sources added during research**: Greshake et al. (indirect prompt injection, arXiv:2302.12173), Wang/Pradel/Liu PatchDiff (arXiv:2503.15223 — upgraded from an unexplained citation to the central evidence for two skills), Roman & Mnich TDD+M (now grade-limited honestly), FAROS and MAST mappings from the verified agents-md research base.
+- **New sources added during research**: Greshake et al. (indirect prompt injection, arXiv:2302.12173), Wang/Pradel/Liu PatchDiff (arXiv:2503.15223, upgraded from an unexplained citation to the central evidence for two skills), Roman & Mnich TDD+M (now grade-limited honestly), FAROS and MAST mappings from the verified agents-md research base.
 - **Skills that must stay `draft` regardless of source quality**: `agent-evaluation-and-benchmarking`, `prompt-injection-resistance`, `tool-authorization-audit` (young domains, defenses not empirically validated). Promotion requires real-task evidence per the evidence standard, not more citations.
 - **Duplicate citation fixed**: `privacy-and-data-handling` cited the NIST Privacy Framework twice; `repository-change-verification` cited the SWE-bench paper where the PatchDiff paper is the on-point source.
 

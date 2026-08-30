@@ -52,7 +52,7 @@ If configuration precedence or secret ownership is unclear, stop and resolve it 
 ## Validation evidence and provenance
 Claims in this skill map to graded findings in [`docs/research.md`](../../docs/research.md):
 
-- Recurring secret-leak channels — env vars, logs, CI configuration, artifacts (S3, Moderate): OWASP Secrets Management and CI/CD Security cheat sheets; convergent incident experience.
+- Recurring secret-leak channels (S3, Moderate): env vars, logs, CI configuration, artifacts; sources: OWASP Secrets Management and CI/CD Security cheat sheets; convergent incident experience.
 - No claim that any specific vault product prevents leaks (S3 boundary, Moderate): tool choice is repository-specific.
 
 Source boundary: cheat sheets document recurring channels; they do not evaluate this skill's specific handling steps.

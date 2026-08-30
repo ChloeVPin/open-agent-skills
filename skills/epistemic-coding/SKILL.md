@@ -51,7 +51,7 @@ If the evidence is contradictory, preserve the competing explanations and use th
 Claims in this skill map to graded findings in [`docs/research.md`](../../docs/research.md):
 
 - Distinguishing knowledge types and seeking disconfirming evidence (F4, Principled): the operationalized scientific method; not itself an evaluated intervention.
-- Motivating evidence — plausible-but-wrong agent output passing superficial checks (F1, Strong): Wang et al. 2025, MAST verification failure modes, mined real-world agent failures.
+- Motivating evidence (F1, Strong): plausible-but-wrong agent output passing superficial checks; sources: Wang et al. 2025, MAST verification failure modes, mined real-world agent failures.
 - Uncertainty management alignment (NIST AI RMF): factual alignment with risk-management guidance, not an effectiveness study.
 
 Source boundary: these sources are design input, not proof that this skill improves outcomes in a given repository (see `docs/evidence-standard.md` limits).

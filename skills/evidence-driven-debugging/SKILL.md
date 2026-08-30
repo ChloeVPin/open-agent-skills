@@ -53,7 +53,7 @@ If the failure cannot be reproduced, preserve the report and add instrumentation
 Claims in this skill map to graded findings in [`docs/research.md`](../../docs/research.md):
 
 - Observation/hypothesis/experiment discipline (F4, Principled): operationalized scientific method; not an evaluated intervention.
-- Incident discipline — clear roles, preserved facts and follow-ups (C2, Moderate): convergent postmortem practice.
+- Incident discipline (C2, Moderate): clear roles, preserved facts and follow-ups; source: convergent postmortem practice.
 - Motivating evidence (F1, Strong): verification failure modes occur even in successful agent runs; superficial checks miss real failures.
 
 Source boundary: sources are design input, not proof that this debugging procedure outperforms alternatives in a given codebase.

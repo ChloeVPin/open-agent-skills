@@ -21,7 +21,7 @@ Trigger before publishing a new skill, promoting its lifecycle, revising a trust
 - Its trigger must distinguish when it applies from neighboring skills; its procedure must be actionable without hiding important decisions.
 - Claims, confidence, and lifecycle must not exceed the evidence. A polished document is not validation.
 - Every material claim must be graded (Strong / Moderate / Inferential / Principled) and traceable to a finding in [`docs/research.md`](../../docs/research.md) via the provenance section.
-- A skill should add depth, coverage, or a safer composition—not merely rename existing guidance or increase file count.
+- A skill should add depth, coverage, or a safer composition, not merely rename existing guidance or increase file count.
 
 ## Procedure
 
@@ -53,7 +53,7 @@ If the skill’s target or evidence is ambiguous, defer publication and ask for 
 Claims in this skill map to graded findings in [`docs/research.md`](../../docs/research.md) and rules in [`docs/evidence-standard.md`](../../docs/evidence-standard.md):
 
 - SKILL.md format and progressive-disclosure requirements (F8): the Agent Skills specification is authoritative as format; its effectiveness claim is Inferential.
-- Evidence grading, source hierarchy, and claim-to-source-to-grade mapping: repository standard (Principled) — established because anonymous attribution and grade-less claims were systemic audit findings.
+- Evidence grading, source hierarchy, and claim-to-source-to-grade mapping: repository standard (Principled), established because anonymous attribution and grade-less claims were systemic audit findings.
 - Keeping skills focused and rejecting file-count growth (F3, Moderate): context quality matters more than volume.
 
 Source boundary: the review criteria are a governance choice, not a validated rubric; a skill passing review can still fail in real tasks.

@@ -53,7 +53,7 @@ If a package cannot be resolved from an authoritative source, stop and reject or
 ## Validation evidence and provenance
 Claims in this skill map to graded findings in [`docs/research.md`](../../docs/research.md):
 
-- Package hallucination by code-generating LLMs creates supply-chain injection vectors (S4/F1, Strong): Spracklen et al., USENIX Security 2025 — controlled measurement.
+- Package hallucination by code-generating LLMs creates supply-chain injection vectors (S4/F1, Strong): Spracklen et al., USENIX Security 2025; controlled measurement.
 - Dependency-review mechanism facts (S4, Strong vendor fact): GitHub dependency review behavior is documented.
 - Generative-AI risk framing (S5, Moderate): NIST AI 600-1.
 

@@ -52,7 +52,7 @@ If tooling reports a candidate but usage cannot be ruled out, classify it as unc
 Claims in this skill map to graded findings in [`docs/research.md`](../../docs/research.md):
 
 - Tool facts (C4, Strong): `noUnusedLocals`, `no-unused-vars`, and `git blame` are documented, deterministic tools.
-- Tool-blindness limits (C4, Inferential): static tools cannot see reflection, dynamic dispatch, or cross-repository consumers — hence mandatory caller checks before deletion.
+- Tool-blindness limits (C4, Inferential): static tools cannot see reflection, dynamic dispatch, or cross-repository consumers, hence mandatory caller checks before deletion.
 - Removal rationale preservation (F3, Moderate): relevant context belongs where future readers will find it.
 
 Source boundary: the safety of any individual removal is verified per-case by the procedure, not by the sources.
